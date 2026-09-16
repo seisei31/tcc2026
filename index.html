@@ -160,14 +160,13 @@ a{color:inherit}.noise{position:fixed;inset:0;pointer-events:none;z-index:100;op
 
 .jane-card {
   position: absolute;
-  width: 270px;
-  height: 325px;
+  width: 255px;
+  height: 310px;
   margin: 0;
   overflow: hidden;
 
   background: #0b0b0b;
   border: 1px solid rgba(255, 102, 88, .35);
-
   box-shadow: 0 22px 55px rgba(0, 0, 0, .5);
 
   cursor: pointer;
@@ -215,10 +214,8 @@ a{color:inherit}.noise{position:fixed;inset:0;pointer-events:none;z-index:100;op
 
 .jane-card-back {
   left: 0;
-  top: 28px;
-
-  transform: rotate(-4deg);
-
+  top: 25px;
+  transform: rotate(-5deg);
   z-index: 1;
 }
 
@@ -228,9 +225,7 @@ a{color:inherit}.noise{position:fixed;inset:0;pointer-events:none;z-index:100;op
 .jane-card-front {
   right: 0;
   top: 0;
-
-  transform: rotate(3deg);
-
+  transform: rotate(4deg);
   z-index: 2;
 }
 
@@ -268,14 +263,27 @@ a{color:inherit}.noise{position:fixed;inset:0;pointer-events:none;z-index:100;op
 .red-john-mark {
   position: absolute;
 
-  width: 320px;
+  width: 680px;
+  height: 680px;
 
-  right: -90px;
-  top: 40px;
+  right: -230px;
+  top: -70px;
+
+  background: var(--warm);
+
+  -webkit-mask:
+    url("assets/images/redjohntcc.png")
+    center / contain
+    no-repeat;
+
+  mask:
+    url("assets/images/redjohntcc.png")
+    center / contain
+    no-repeat;
 
   opacity: .7;
 
-  transform: rotate(10deg);
+  transform: rotate(9deg);
 
   pointer-events: none;
   user-select: none;
@@ -296,14 +304,43 @@ a{color:inherit}.noise{position:fixed;inset:0;pointer-events:none;z-index:100;op
 
 /* ===== Responsividade ===== */
 
-@media (max-width: 700px) {
+.mentalist-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(360px, .85fr);
+  gap: 70px;
+  align-items: center;
+  margin-top: 25px;
+  margin-bottom: 75px;
+}
+
+.mentalist-intro-copy {
+  max-width: 650px;
+}
+
+.mentalist-gallery {
+  position: relative;
+  width: 430px;
+  height: 340px;
+  margin: 0;
+  justify-self: end;
+}
+@media (max-width: 850px) {
+
+  .mentalist-intro {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .mentalist-intro-copy {
+    max-width: 100%;
+  }
 
   .mentalist-gallery {
     width: 100%;
-    max-width: 340px;
-    height: 320px;
-
-    margin: 40px auto 60px;
+    max-width: 430px;
+    height: 340px;
+    margin: 20px auto 0;
+    justify-self: center;
   }
 
   .jane-card {
@@ -312,9 +349,10 @@ a{color:inherit}.noise{position:fixed;inset:0;pointer-events:none;z-index:100;op
   }
 
   .red-john-mark {
-    width: 290px;
-    right: -130px;
-    top: 180px;
+    width: 320px;
+    height: 320px;
+    right: -120px;
+    top: 120px;
   }
 }
 </style>
@@ -550,11 +588,21 @@ a{color:inherit}.noise{position:fixed;inset:0;pointer-events:none;z-index:100;op
       <div class="section-side"><span>05</span><p>CULTURA POP</p></div>
       <div class="mentalist-main reveal">
         <p class="eyebrow warm"><span></span> THE MENTALIST</p>
-        <h2><em>O Mentalista</em><br>como referência de comunicação e observação </h2>
-        <p class="mentalist-lead"> A série <em>O Mentalista</em> acompanha Patrick Jane, um ex-falso vidente que passa a atuar como consultor em investigações criminais. Em vez de possuir habilidades sobrenaturais, Jane se destaca principalmente por sua capacidade de observação, pela interpretação do comportamento humano e pela forma como conduz conversas para obter informações. </p>
-          <div class="mentalist-gallery">
+        <h2><em>O Mentalista</em><br>e a observação do comportamento </h2>
+        <div class="mentalist-intro">
+        <div class="mentalist-intro-copy">
+          <p class="mentalist-lead">
+            A série <em>O Mentalista</em> acompanha Patrick Jane, um ex-falso
+            vidente que passa a atuar como consultor em investigações criminais.
+            Em vez de possuir habilidades sobrenaturais, Jane se destaca
+            principalmente por sua capacidade de observação, pela interpretação
+            do comportamento humano e pela forma como conduz conversas para
+            obter informações.
+          </p>
+        </div>
+        <div class="mentalist-gallery">
 
-      <figure class="jane-card jane-card-back">
+        <figure class="jane-card jane-card-back">
         <img
             src="assets/images/xadreztcc.png"
             alt="Patrick Jane jogando xadrez"
@@ -569,9 +617,9 @@ a{color:inherit}.noise{position:fixed;inset:0;pointer-events:none;z-index:100;op
         >
         <figcaption>COMPORTAMENTO</figcaption>
       </figure>
-
           </div>
-        <div class="case-file">
+          </div>
+          <div class="case-file">
           <div class="case-stamp">
           OBSERVAR<br>
           INTERPRETAR<br>
