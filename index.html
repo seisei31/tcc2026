@@ -148,6 +148,171 @@ a{color:inherit}.noise{position:fixed;inset:0;pointer-events:none;z-index:100;op
 .case-copy p {
   max-width: 72ch;
 }
+
+/* ===== Imagens - O Mentalista ===== */
+
+.mentalist-gallery {
+  position: relative;
+  width: 420px;
+  height: 360px;
+  margin: 45px 20px 65px auto;
+}
+
+.jane-card {
+  position: absolute;
+  width: 270px;
+  height: 325px;
+  margin: 0;
+  overflow: hidden;
+
+  background: #0b0b0b;
+  border: 1px solid rgba(255, 102, 88, .35);
+
+  box-shadow: 0 22px 55px rgba(0, 0, 0, .5);
+
+  cursor: pointer;
+
+  transition:
+    transform .35s ease,
+    opacity .35s ease,
+    filter .35s ease,
+    box-shadow .35s ease;
+}
+
+.jane-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  filter: grayscale(100%) contrast(1.07);
+
+  transition:
+    filter .35s ease,
+    transform .35s ease;
+}
+
+.jane-card figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  padding: 45px 16px 14px;
+
+  background:
+    linear-gradient(
+      transparent,
+      rgba(0, 0, 0, .92)
+    );
+
+  color: #e4e1de;
+  font: 500 .58rem Consolas;
+  letter-spacing: .09em;
+}
+
+
+/* imagem do xadrez */
+
+.jane-card-back {
+  left: 0;
+  top: 28px;
+
+  transform: rotate(-4deg);
+
+  z-index: 1;
+}
+
+
+/* imagem principal */
+
+.jane-card-front {
+  right: 0;
+  top: 0;
+
+  transform: rotate(3deg);
+
+  z-index: 2;
+}
+
+
+/* quando passa o mouse na área */
+
+.mentalist-gallery:hover .jane-card {
+  opacity: .45;
+}
+
+
+/* imagem selecionada */
+
+.mentalist-gallery .jane-card:hover {
+  z-index: 10;
+
+  opacity: 1;
+
+  transform:
+    translateY(-10px)
+    rotate(0deg)
+    scale(1.06);
+
+  box-shadow: 0 30px 70px rgba(0, 0, 0, .65);
+}
+
+.mentalist-gallery .jane-card:hover img {
+  filter: grayscale(10%) contrast(1.04);
+  transform: scale(1.035);
+}
+
+
+/* ===== Símbolo do Red John ===== */
+
+.red-john-mark {
+  position: absolute;
+
+  width: 430px;
+
+  right: -100px;
+  top: 110px;
+
+  opacity: .055;
+
+  transform: rotate(8deg);
+
+  pointer-events: none;
+  user-select: none;
+
+  z-index: 0;
+}
+
+.mentalist-main,
+.mentalist-section .section-side {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* ===== Responsividade ===== */
+
+@media (max-width: 700px) {
+
+  .mentalist-gallery {
+    width: 100%;
+    max-width: 340px;
+    height: 320px;
+
+    margin: 40px auto 60px;
+  }
+
+  .jane-card {
+    width: 215px;
+    height: 270px;
+  }
+
+  .red-john-mark {
+    width: 290px;
+    right: -130px;
+    top: 180px;
+  }
+}
 </style>
 </head>
 <body>
