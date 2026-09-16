@@ -355,6 +355,21 @@ a{color:inherit}.noise{position:fixed;inset:0;pointer-events:none;z-index:100;op
     top: 120px;
   }
 }
+
+/* ===== Brilho que acompanha o mouse ===== */
+
+.cursor-glow {
+  width: 600px;
+  height: 600px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(140, 124, 255, .16) 0%,
+      rgba(140, 124, 255, .07) 35%,
+      transparent 70%
+    );
+}
 </style>
 </head>
 <body>
