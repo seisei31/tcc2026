@@ -40,6 +40,86 @@
 .case-copy h3 {
   font-size: 1.65rem;
 }
+
+/* ===== Sumário visual ===== */
+
+.index-section {
+  width: min(calc(100% - 56px), var(--max));
+  margin: auto;
+  padding: 70px 0 110px;
+  border-top: 1px solid var(--line);
+}
+
+.index-title {
+  margin-bottom: 42px;
+}
+
+.index-title span {
+  font: 500 .65rem Consolas;
+  letter-spacing: .15em;
+  color: var(--violet);
+}
+
+.index-title h2 {
+  font-size: clamp(2rem, 3vw, 3rem);
+  margin: 10px 0 0;
+  letter-spacing: -.04em;
+}
+
+.site-index {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 60px;
+}
+
+.site-index a {
+  display: grid;
+  grid-template-columns: 45px 1fr auto;
+  align-items: center;
+  gap: 15px;
+
+  padding: 22px 0;
+  border-top: 1px solid var(--line);
+
+  color: var(--text);
+  text-decoration: none;
+
+  transition: .2s;
+}
+
+.site-index a:hover {
+  padding-left: 10px;
+  border-color: var(--violet);
+}
+
+.site-index a > span {
+  font: 500 .65rem Consolas;
+  color: var(--violet);
+}
+
+.site-index strong {
+  font-size: 1.05rem;
+}
+
+.site-index small {
+  color: var(--muted);
+  font-size: .75rem;
+}
+
+@media (max-width: 750px) {
+
+  .site-index {
+    grid-template-columns: 1fr;
+  }
+
+  .site-index a {
+    grid-template-columns: 40px 1fr;
+  }
+
+  .site-index small {
+    display: none;
+  }
+}
 </style>
 </head>
 <body>
@@ -68,6 +148,52 @@
 
   <main>
     <section id="inicio" class="hero section">
+    <section class="index-section">
+
+  <div class="index-title">
+    <span>MAPA DO PROJETO</span>
+    <h2>Explore o conteúdo</h2>
+  </div>
+
+  <div class="site-index">
+
+    <a href="#conceito">
+      <span>01</span>
+      <strong>Conceito</strong>
+      <small>Origem e fundamentos</small>
+    </a>
+
+    <a href="#comunicacao">
+      <span>02</span>
+      <strong>Comunicação</strong>
+      <small>Linguagem e comportamento</small>
+    </a>
+
+    <a href="#educacao">
+      <span>03</span>
+      <strong>Educação</strong>
+      <small>Ensino e aprendizagem</small>
+    </a>
+
+    <a href="#aplicacoes">
+      <span>04</span>
+      <strong>Aplicações</strong>
+      <small>Contextos profissionais</small>
+    </a>
+
+    <a href="#mentalista">
+      <span>05</span>
+      <strong>O Mentalista</strong>
+      <small>PNL na cultura popular</small>
+    </a>
+
+    <a href="#referencias">
+      <span>06</span>
+      <strong>Referências</strong>
+      <small>Livros e artigos</small>
+    </a>
+
+  </div>
       <div class="hero-copy reveal">
         <div class="eyebrow"><span></span> TCC · TÉCNICO EM INFORMÁTICA · 2026</div>
         <h1>O que acontece<br>entre <em>pensar</em><br>e <em>comunicar?</em></h1>
