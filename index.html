@@ -6,6 +6,27 @@
   <meta name="description" content="Programação Neurolinguística: contribuições para o desenvolvimento da comunicação humana. Site informativo do TCC de Matheus Cardias Costa." />
   <title>PNL — Comunicação, percepção e comportamento</title>
   <style>
+:root {
+  --bg:#090b10; --panel:#10131b; --panel2:#151925; --text:#f3f0ea; --muted:#9b9da8;
+  --line:rgba(255,255,255,.11); --violet:#8c7cff; --cyan:#65d8d0; --warm:#ff6658;
+  --max:1280px;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,Segoe UI,Arial,Helvetica,sans-serif;overflow-x:hidden}
+a{color:inherit}.noise{position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.9'/%3E%3C/svg%3E")}.cursor-glow{position:fixed;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(140,124,255,.11),transparent 65%);pointer-events:none;z-index:-1;transform:translate(-50%,-50%)}
+.site-header{position:fixed;top:0;left:0;right:0;z-index:50;height:82px;display:flex;align-items:center;justify-content:space-between;padding:0 max(28px,calc((100vw - var(--max))/2));background:linear-gradient(to bottom,rgba(9,11,16,.92),rgba(9,11,16,.35),transparent);backdrop-filter:blur(6px)}.brand{display:flex;gap:14px;align-items:center;text-decoration:none}.brand-symbol{font:500 1.15rem Consolas;border:1px solid var(--line);padding:8px 9px;border-radius:9px;letter-spacing:-.08em}.brand-symbol span{color:var(--violet)}.brand-copy{font-size:.7rem;line-height:1.12;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#c9c9cf}.nav{display:flex;gap:25px}.nav a{text-decoration:none;font:500 .72rem Consolas;text-transform:uppercase;color:#bbbcc5;transition:.2s}.nav a:hover{color:white}.menu-toggle{display:none;border:0;background:none;width:44px;height:44px}.menu-toggle span{display:block;width:22px;height:1px;background:#fff;margin:7px auto}
+.section{position:relative;width:min(calc(100% - 56px),var(--max));margin:auto;padding:125px 0}.eyebrow{font:500 .72rem Consolas;letter-spacing:.12em;color:#c3c4ca;display:flex;align-items:center;gap:9px}.eyebrow span{width:22px;height:1px;background:var(--violet)}.eyebrow.warm span{background:var(--warm)}.section-side{position:absolute;left:0;top:135px;width:70px;font:400 .66rem Consolas;color:#6f7280}.section-side span{color:white;font-size:.85rem}.section-side p{writing-mode:vertical-rl;transform:rotate(180deg);letter-spacing:.16em;margin-top:18px}.section-heading{margin-left:115px;max-width:1020px}.section-heading h2{font-size:clamp(2.8rem,5.2vw,5.7rem);line-height:.98;letter-spacing:-.06em;margin:18px 0 65px;font-weight:600}.section-heading h2 em,.project-section h2 em{font-family:Georgia,serif;font-weight:400;color:var(--violet)}
+.hero{min-height:100vh;display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center;padding-top:120px}.hero h1{font-size:clamp(4rem,7vw,7.8rem);line-height:.84;letter-spacing:-.075em;margin:24px 0 30px;font-weight:700}.hero h1 em{font-family:Georgia,serif;font-weight:400;color:var(--violet)}.hero-lead{max-width:700px;font-size:1.08rem;line-height:1.75;color:var(--muted)}.hero-actions{display:flex;gap:12px;margin-top:36px}.button{display:inline-flex;gap:22px;align-items:center;padding:15px 19px;border-radius:999px;text-decoration:none;font-size:.8rem;font-weight:800}.button.primary{background:var(--text);color:#0d0e12}.button.ghost{border:1px solid var(--line)}.hero-visual{position:relative;min-height:620px;display:grid;place-items:center}.visual-ring{position:absolute;border:1px solid rgba(255,255,255,.13);border-radius:50%}.ring-one{width:480px;height:480px}.ring-two{width:340px;height:340px;border-style:dashed;animation:rotate 30s linear infinite}.ring-three{width:190px;height:190px;border-color:rgba(140,124,255,.35)}@keyframes rotate{to{transform:rotate(360deg)}}.visual-core{width:150px;height:150px;border-radius:50%;background:radial-gradient(circle at 35% 25%,#2b2e45,#12141d 70%);display:grid;place-content:center;text-align:center;border:1px solid rgba(140,124,255,.35);box-shadow:0 0 60px rgba(140,124,255,.11);z-index:3}.visual-core span{font:400 .62rem Consolas;color:#a9aab4}.visual-core strong{font-size:.85rem;letter-spacing:.08em;margin-top:4px}.concept-node{position:absolute;border:1px solid var(--line);background:rgba(15,17,24,.88);backdrop-filter:blur(9px);color:white;padding:13px 16px;border-radius:10px;font:500 .7rem Consolas;letter-spacing:.05em;cursor:pointer;transition:.25s}.concept-node small{color:var(--violet);margin-right:8px}.concept-node:hover{transform:translateY(-4px);border-color:var(--violet)}.node-language{top:13%;left:2%}.node-thought{right:-2%;top:36%}.node-behavior{bottom:13%;left:14%}.visual-hint{position:absolute;bottom:1%;font:400 .62rem Consolas;color:#666977}.signal{position:absolute;width:6px;height:6px;background:var(--violet);border-radius:50%;box-shadow:0 0 14px var(--violet)}.signal-a{top:28%;left:29%}.signal-b{right:22%;top:49%;background:var(--cyan)}.signal-c{bottom:25%;left:41%;background:var(--warm)}.hero-foot{position:absolute;bottom:35px;left:0;right:0;display:flex;justify-content:space-between;font:400 .61rem Consolas;color:#626570;letter-spacing:.1em}
+.manifesto{padding-top:80px;padding-bottom:150px;border-top:1px solid var(--line)}.big-quote{font-size:clamp(3.7rem,8vw,9rem);letter-spacing:-.07em;line-height:.9;margin:0;font-weight:600}.manifesto-grid{display:grid;grid-template-columns:1fr 2fr;gap:80px;margin:65px 0 0 35%}.manifesto-grid span{font:400 .65rem Consolas;color:#777985;letter-spacing:.1em}.manifesto-grid p{font-size:1.15rem;color:#b8b9c0;line-height:1.8;margin:0}
+.content-section,.communication-section,.education-section,.applications-section,.references-section{border-top:1px solid var(--line)}.content-columns{margin-left:115px;display:grid;grid-template-columns:1.4fr .6fr;gap:80px}.content-columns>div p{font-size:1.05rem;line-height:1.85;color:#b5b7c0}.source-note{border-left:1px solid var(--line);padding-left:28px}.source-note span,.micro-label{font:500 .62rem Consolas;color:#777a88;letter-spacing:.11em}.source-note strong{display:block;font-size:1.25rem;margin:14px 0 4px}.source-note p{color:var(--muted)}.source-note a,.inline-link,.case-copy a,.reference-list a{font-size:.78rem;font-weight:800;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.25);padding-bottom:3px}
+.communication-lab{margin-left:115px;background:linear-gradient(135deg,#111521,#0d1017);border:1px solid var(--line);border-radius:28px;padding:42px;display:grid;grid-template-columns:1.2fr .8fr;gap:50px}.lab-copy h3{font-size:2.5rem;letter-spacing:-.04em;margin:12px 0}.lab-copy>p{color:var(--muted);line-height:1.7}.scenario-box{margin-top:25px;border-left:2px solid var(--violet);padding:15px 18px;background:rgba(140,124,255,.05)}.scenario-box small{display:block;font:500 .58rem Consolas;color:#777a88;margin-bottom:7px}.choice-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}.choice{border:1px solid var(--line);background:transparent;color:#c6c7ce;border-radius:999px;padding:11px 13px;cursor:pointer}.choice.active{border-color:var(--violet);background:rgba(140,124,255,.12);color:white}.lab-result{display:grid;align-content:center;gap:14px}.lab-result>div{padding:20px;border-top:1px solid var(--line)}.lab-result small{font:500 .57rem Consolas;color:#707380;display:block;margin-bottom:8px}.lab-result strong{font-size:1.1rem;line-height:1.4}.tool-cards{margin:20px 0 0 115px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.tool-card{padding:25px;border:1px solid var(--line);border-radius:18px;background:transparent;color:white;text-align:left;min-height:245px;transition:.25s}.tool-card:hover{background:var(--panel);transform:translateY(-4px)}.tool-card>span{font:400 .65rem Consolas;color:var(--violet)}.tool-card h3{font-size:1.5rem;margin:34px 0 8px}.tool-card p{color:var(--muted);line-height:1.6;font-size:.9rem}.tool-card button{border:0;background:none;padding:0;color:white;font-weight:800;cursor:pointer;margin-top:14px}
+.education-grid{margin-left:115px;display:grid;grid-template-columns:.9fr 1.1fr;gap:90px}.education-copy p{font-size:1.02rem;color:#b6b8c0;line-height:1.85}.representations{border-top:1px solid var(--line)}.representation{width:100%;display:grid;grid-template-columns:60px 1fr 1fr;align-items:center;text-align:left;background:transparent;color:white;border:0;border-bottom:1px solid var(--line);padding:20px 0;cursor:pointer;transition:.2s}.representation span{font:500 .8rem Consolas;color:#666a79}.representation strong{font-size:1.15rem}.representation small{color:#777985}.representation.active span,.representation.active strong{color:var(--cyan)}#rep-description{padding:20px 0;color:var(--muted);line-height:1.7}
+.application-list{margin-left:115px}.application-list article{display:grid;grid-template-columns:70px 1fr 1.1fr;gap:25px;align-items:center;padding:27px 0;border-top:1px solid var(--line)}.application-list article span{font:400 .65rem Consolas;color:#6b6e7a}.application-list h3{font-size:1.4rem;margin:0}.application-list p{margin:0;color:var(--muted)}
+.mentalist-section{width:100%;max-width:none;background:#11100f;padding-left:max(28px,calc((100vw - var(--max))/2));padding-right:max(28px,calc((100vw - var(--max))/2));overflow:hidden;border-top:1px solid rgba(255,102,88,.16)}.mentalist-section .section-side{left:max(28px,calc((100vw - var(--max))/2))}.mentalist-main{margin-left:115px;max-width:1100px}.mentalist-main h2{font-size:clamp(3.4rem,6vw,6.8rem);line-height:.9;letter-spacing:-.065em;margin:20px 0 30px}.mentalist-main h2 em{font-family:Georgia,serif;color:var(--warm);font-weight:400}.mentalist-lead{max-width:800px;color:#b9b4b0;font-size:1.08rem;line-height:1.75}.case-file{margin-top:55px;border:1px solid rgba(255,102,88,.3);background:rgba(255,102,88,.035);display:grid;grid-template-columns:150px 1fr}.case-stamp{font:500 .85rem Consolas;color:var(--warm);padding:30px;border-right:1px solid rgba(255,102,88,.25)}.case-copy{padding:30px 36px}.case-copy small,.jane-note small{font:500 .62rem Consolas;color:#8d817d;letter-spacing:.08em}.case-copy h3{font-size:2rem;letter-spacing:-.03em;margin:10px 0}.case-copy p{color:#b4adaa;line-height:1.7}.jane-note{margin-top:16px;display:grid;grid-template-columns:70px 1fr;gap:20px;border-top:1px solid rgba(255,255,255,.1);padding-top:25px}.jane-symbol{width:54px;height:54px;border-radius:50%;border:1px solid var(--warm);display:grid;place-items:center;font:500 1.1rem Consolas;color:var(--warm)}.jane-note p{margin:6px 0;color:#aaa3a0;line-height:1.65}.red-thread{position:absolute;height:1px;background:linear-gradient(90deg,transparent,var(--warm),transparent);opacity:.18;transform-origin:left}.thread-one{width:750px;right:-130px;top:220px;transform:rotate(-22deg)}.thread-two{width:620px;right:-70px;bottom:170px;transform:rotate(17deg)}
+.reference-list{margin-left:115px}.reference-list article{display:grid;grid-template-columns:80px 1fr 120px;gap:25px;padding:27px 0;border-top:1px solid var(--line);align-items:start}.reference-list>article>span{font:500 .72rem Consolas;color:var(--violet)}.reference-list h3{margin:0 0 5px;font-size:1.12rem}.reference-list p{margin:0 0 8px;color:var(--muted)}.reference-list>article>small{text-align:right;font:500 .58rem Consolas;color:#696c78}.project-section{border-top:1px solid var(--line);display:grid;grid-template-columns:1.25fr .75fr;gap:80px}.project-section h2{font-size:clamp(2.8rem,4.8vw,5rem);line-height:1;letter-spacing:-.055em;margin:20px 0}.project-meta p{border-top:1px solid var(--line);padding:18px 0;margin:0}.project-meta span{display:block;font:500 .56rem Consolas;color:#686b77;margin-bottom:6px}footer{width:min(calc(100% - 56px),var(--max));margin:auto;padding:30px 0 45px;border-top:1px solid var(--line);display:flex;justify-content:space-between;font:400 .66rem Consolas;color:#757884}footer a{text-decoration:none}
+.modal{position:fixed;inset:0;z-index:80;display:grid;place-items:center;opacity:0;visibility:hidden;transition:.2s}.modal.open{opacity:1;visibility:visible}.modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.72);backdrop-filter:blur(8px)}.modal-card{position:relative;z-index:2;width:min(540px,calc(100% - 30px));background:#151822;border:1px solid var(--line);border-radius:22px;padding:35px;box-shadow:0 30px 100px rgba(0,0,0,.5)}.modal-card h3{font-size:2.2rem;margin:12px 0}.modal-card p{color:var(--muted);line-height:1.75}.modal-close{position:absolute;right:16px;top:12px;border:0;background:none;color:white;font-size:1.6rem;cursor:pointer}.reveal{opacity:1;transform:none}
+@media(max-width:980px){.nav{display:none;position:absolute;top:70px;right:20px;padding:20px;background:#11141c;border:1px solid var(--line);border-radius:16px;flex-direction:column}.nav.open{display:flex}.menu-toggle{display:block}.hero{grid-template-columns:1fr;padding-top:135px}.hero-visual{min-height:480px}.hero-foot{position:static;margin-top:30px}.section-side{display:none}.section-heading,.content-columns,.communication-lab,.tool-cards,.education-grid,.application-list,.mentalist-main,.reference-list{margin-left:0}.content-columns,.education-grid{grid-template-columns:1fr}.communication-lab{grid-template-columns:1fr}.tool-cards{grid-template-columns:1fr 1fr}.project-section{grid-template-columns:1fr}.manifesto-grid{margin-left:0}.case-file{grid-template-columns:1fr}.case-stamp{border-right:0;border-bottom:1px solid rgba(255,102,88,.25)}}
+@media(max-width:640px){.section{width:min(calc(100% - 28px),var(--max));padding:90px 0}.site-header{padding:0 15px}.brand-copy{display:none}.hero{padding-top:115px}.hero h1{font-size:clamp(3.6rem,17vw,5.2rem)}.hero-actions{flex-direction:column;align-items:flex-start}.hero-visual{min-height:390px;transform:scale(.86);margin:-20px}.ring-one{width:390px;height:390px}.ring-two{width:280px;height:280px}.manifesto-grid{grid-template-columns:1fr;gap:18px}.section-heading h2{font-size:3rem}.content-columns{gap:35px}.tool-cards{grid-template-columns:1fr}.communication-lab{padding:25px}.application-list article{grid-template-columns:45px 1fr}.application-list p{grid-column:2}.representation{grid-template-columns:45px 1fr}.representation small{grid-column:2}.mentalist-section{padding-left:14px;padding-right:14px}.case-copy{padding:24px}.case-copy h3{font-size:1.6rem}.reference-list article{grid-template-columns:60px 1fr}.reference-list>article>small{display:none}.project-section{gap:25px}.cursor-glow{display:none}}
+
 /* ===== Ajuste de tipografia ===== */
 
 .hero h1 {
@@ -120,6 +141,13 @@
     display: none;
   }
 }
+
+.content-columns > div p,
+.education-copy p,
+.mentalist-lead,
+.case-copy p {
+  max-width: 72ch;
+}
 </style>
 </head>
 <body>
@@ -148,6 +176,36 @@
 
   <main>
     <section id="inicio" class="hero section">
+      <div class="hero-copy reveal">
+        <div class="eyebrow"><span></span> TCC · TÉCNICO EM INFORMÁTICA · 2026</div>
+        <h1>O que acontece<br>entre <em>pensar</em><br>e <em>comunicar?</em></h1>
+        <p class="hero-lead">Uma experiência interativa sobre Programação Neurolinguística e as relações que a abordagem propõe entre linguagem, percepção, comportamento e comunicação humana.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#conceito">Começar a explorar <span>↘</span></a>
+          <a class="button ghost" href="#referencias">Ver referencial teórico</a>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal" aria-label="Diagrama interativo de PNL">
+        <div class="visual-ring ring-one"></div>
+        <div class="visual-ring ring-two"></div>
+        <div class="visual-ring ring-three"></div>
+        <div class="signal signal-a"></div>
+        <div class="signal signal-b"></div>
+        <div class="signal signal-c"></div>
+        <button class="concept-node node-language" data-node="linguagem"><small>01</small>LINGUAGEM</button>
+        <button class="concept-node node-thought" data-node="pensamento"><small>02</small>PENSAMENTO</button>
+        <button class="concept-node node-behavior" data-node="comportamento"><small>03</small>COMPORTAMENTO</button>
+        <div class="visual-core"><span>EXPERIÊNCIA</span><strong>SUBJETIVA</strong></div>
+        <p class="visual-hint">toque nos conceitos</p>
+      </div>
+
+      <div class="hero-foot">
+        <span>MATHEUS CARDIAS COSTA</span>
+        <span>Santa Maria · RS</span>
+      </div>
+    </section>
+
     <section class="index-section">
 
   <div class="index-title">
@@ -194,35 +252,8 @@
     </a>
 
   </div>
-      <div class="hero-copy reveal">
-        <div class="eyebrow"><span></span> TCC · TÉCNICO EM INFORMÁTICA · 2026</div>
-        <h1>O que acontece<br>entre <em>pensar</em><br>e <em>comunicar?</em></h1>
-        <p class="hero-lead">Uma experiência interativa sobre Programação Neurolinguística e as relações que a abordagem propõe entre linguagem, percepção, comportamento e comunicação humana.</p>
-        <div class="hero-actions">
-          <a class="button primary" href="#conceito">Começar a explorar <span>↘</span></a>
-          <a class="button ghost" href="#referencias">Ver referencial teórico</a>
-        </div>
-      </div>
 
-      <div class="hero-visual reveal" aria-label="Diagrama interativo de PNL">
-        <div class="visual-ring ring-one"></div>
-        <div class="visual-ring ring-two"></div>
-        <div class="visual-ring ring-three"></div>
-        <div class="signal signal-a"></div>
-        <div class="signal signal-b"></div>
-        <div class="signal signal-c"></div>
-        <button class="concept-node node-language" data-node="linguagem"><small>01</small>LINGUAGEM</button>
-        <button class="concept-node node-thought" data-node="pensamento"><small>02</small>PENSAMENTO</button>
-        <button class="concept-node node-behavior" data-node="comportamento"><small>03</small>COMPORTAMENTO</button>
-        <div class="visual-core"><span>EXPERIÊNCIA</span><strong>SUBJETIVA</strong></div>
-        <p class="visual-hint">toque nos conceitos</p>
-      </div>
-
-      <div class="hero-foot">
-        <span>MATHEUS CARDIAS COSTA</span>
-        <span>Santa Maria · RS</span>
-      </div>
-    </section>
+</section>
 
     <section class="manifesto section reveal">
       <p class="big-quote">“O mapa não é o território.”</p>
@@ -391,6 +422,7 @@
         <p><span>AUTOR</span>Matheus Cardias Costa</p>
         <p><span>CURSO</span>Técnico em Informática Integrado ao Ensino Médio</p>
         <p><span>INSTITUIÇÃO</span>E.E.E.M. Profª. Maria Rocha</p>
+        <p><span>LOCAL</span>Santa Maria, RS · 2026</p>
       </div>
     </section>
   </main>
