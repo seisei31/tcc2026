@@ -1,776 +1,630 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Programação Neurolinguística: contribuições para o desenvolvimento da comunicação humana. Site informativo do TCC de Matheus Cardias Costa." />
-  <title>PNL — Comunicação, percepção e comportamento</title>
-  <style>
-:root {
-  --bg:#090b10; --panel:#10131b; --panel2:#151925; --text:#f3f0ea; --muted:#9b9da8;
-  --line:rgba(255,255,255,.11); --violet:#8c7cff; --cyan:#65d8d0; --warm:#ff6658;
-  --max:1280px;
-}
-*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,Segoe UI,Arial,Helvetica,sans-serif;overflow-x:hidden}
-a{color:inherit}.noise{position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.9'/%3E%3C/svg%3E")}.cursor-glow{position:fixed;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(140,124,255,.11),transparent 65%);pointer-events:none;z-index:-1;transform:translate(-50%,-50%)}
-.site-header{position:fixed;top:0;left:0;right:0;z-index:50;height:82px;display:flex;align-items:center;justify-content:space-between;padding:0 max(28px,calc((100vw - var(--max))/2));background:linear-gradient(to bottom,rgba(9,11,16,.92),rgba(9,11,16,.35),transparent);backdrop-filter:blur(6px)}.brand{display:flex;gap:14px;align-items:center;text-decoration:none}.brand-symbol{font:500 1.15rem Consolas;border:1px solid var(--line);padding:8px 9px;border-radius:9px;letter-spacing:-.08em}.brand-symbol span{color:var(--violet)}.brand-copy{font-size:.7rem;line-height:1.12;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#c9c9cf}.nav{display:flex;gap:25px}.nav a{text-decoration:none;font:500 .72rem Consolas;text-transform:uppercase;color:#bbbcc5;transition:.2s}.nav a:hover{color:white}.menu-toggle{display:none;border:0;background:none;width:44px;height:44px}.menu-toggle span{display:block;width:22px;height:1px;background:#fff;margin:7px auto}
-.section{position:relative;width:min(calc(100% - 56px),var(--max));margin:auto;padding:125px 0}.eyebrow{font:500 .72rem Consolas;letter-spacing:.12em;color:#c3c4ca;display:flex;align-items:center;gap:9px}.eyebrow span{width:22px;height:1px;background:var(--violet)}.eyebrow.warm span{background:var(--warm)}.section-side{position:absolute;left:0;top:135px;width:70px;font:400 .66rem Consolas;color:#6f7280}.section-side span{color:white;font-size:.85rem}.section-side p{writing-mode:vertical-rl;transform:rotate(180deg);letter-spacing:.16em;margin-top:18px}.section-heading{margin-left:115px;max-width:1020px}.section-heading h2{font-size:clamp(2.8rem,5.2vw,5.7rem);line-height:.98;letter-spacing:-.06em;margin:18px 0 65px;font-weight:600}.section-heading h2 em,.project-section h2 em{font-family:Georgia,serif;font-weight:400;color:var(--violet)}
-.hero{min-height:100vh;display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center;padding-top:120px}.hero h1{font-size:clamp(4rem,7vw,7.8rem);line-height:.84;letter-spacing:-.075em;margin:24px 0 30px;font-weight:700}.hero h1 em{font-family:Georgia,serif;font-weight:400;color:var(--violet)}.hero-lead{max-width:700px;font-size:1.08rem;line-height:1.75;color:var(--muted)}.hero-actions{display:flex;gap:12px;margin-top:36px}.button{display:inline-flex;gap:22px;align-items:center;padding:15px 19px;border-radius:999px;text-decoration:none;font-size:.8rem;font-weight:800}.button.primary{background:var(--text);color:#0d0e12}.button.ghost{border:1px solid var(--line)}.hero-visual{position:relative;min-height:620px;display:grid;place-items:center}.visual-ring{position:absolute;border:1px solid rgba(255,255,255,.13);border-radius:50%}.ring-one{width:480px;height:480px}.ring-two{width:340px;height:340px;border-style:dashed;animation:rotate 30s linear infinite}.ring-three{width:190px;height:190px;border-color:rgba(140,124,255,.35)}@keyframes rotate{to{transform:rotate(360deg)}}.visual-core{width:150px;height:150px;border-radius:50%;background:radial-gradient(circle at 35% 25%,#2b2e45,#12141d 70%);display:grid;place-content:center;text-align:center;border:1px solid rgba(140,124,255,.35);box-shadow:0 0 60px rgba(140,124,255,.11);z-index:3}.visual-core span{font:400 .62rem Consolas;color:#a9aab4}.visual-core strong{font-size:.85rem;letter-spacing:.08em;margin-top:4px}.concept-node{position:absolute;border:1px solid var(--line);background:rgba(15,17,24,.88);backdrop-filter:blur(9px);color:white;padding:13px 16px;border-radius:10px;font:500 .7rem Consolas;letter-spacing:.05em;cursor:pointer;transition:.25s}.concept-node small{color:var(--violet);margin-right:8px}.concept-node:hover{transform:translateY(-4px);border-color:var(--violet)}.node-language{top:13%;left:2%}.node-thought{right:-2%;top:36%}.node-behavior{bottom:13%;left:14%}.visual-hint{position:absolute;bottom:1%;font:400 .62rem Consolas;color:#666977}.signal{position:absolute;width:6px;height:6px;background:var(--violet);border-radius:50%;box-shadow:0 0 14px var(--violet)}.signal-a{top:28%;left:29%}.signal-b{right:22%;top:49%;background:var(--cyan)}.signal-c{bottom:25%;left:41%;background:var(--warm)}.hero-foot{position:absolute;bottom:35px;left:0;right:0;display:flex;justify-content:space-between;font:400 .61rem Consolas;color:#626570;letter-spacing:.1em}
-.manifesto{padding-top:80px;padding-bottom:150px;border-top:1px solid var(--line)}.big-quote{font-size:clamp(3.7rem,8vw,9rem);letter-spacing:-.07em;line-height:.9;margin:0;font-weight:600}.manifesto-grid{display:grid;grid-template-columns:1fr 2fr;gap:80px;margin:65px 0 0 35%}.manifesto-grid span{font:400 .65rem Consolas;color:#777985;letter-spacing:.1em}.manifesto-grid p{font-size:1.15rem;color:#b8b9c0;line-height:1.8;margin:0}
-.content-section,.communication-section,.education-section,.applications-section,.references-section{border-top:1px solid var(--line)}.content-columns{margin-left:115px;display:grid;grid-template-columns:1.4fr .6fr;gap:80px}.content-columns>div p{font-size:1.05rem;line-height:1.85;color:#b5b7c0}.source-note{border-left:1px solid var(--line);padding-left:28px}.source-note span,.micro-label{font:500 .62rem Consolas;color:#777a88;letter-spacing:.11em}.source-note strong{display:block;font-size:1.25rem;margin:14px 0 4px}.source-note p{color:var(--muted)}.source-note a,.inline-link,.case-copy a,.reference-list a{font-size:.78rem;font-weight:800;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.25);padding-bottom:3px}
-.communication-lab{margin-left:115px;background:linear-gradient(135deg,#111521,#0d1017);border:1px solid var(--line);border-radius:28px;padding:42px;display:grid;grid-template-columns:1.2fr .8fr;gap:50px}.lab-copy h3{font-size:2.5rem;letter-spacing:-.04em;margin:12px 0}.lab-copy>p{color:var(--muted);line-height:1.7}.scenario-box{margin-top:25px;border-left:2px solid var(--violet);padding:15px 18px;background:rgba(140,124,255,.05)}.scenario-box small{display:block;font:500 .58rem Consolas;color:#777a88;margin-bottom:7px}.choice-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}.choice{border:1px solid var(--line);background:transparent;color:#c6c7ce;border-radius:999px;padding:11px 13px;cursor:pointer}.choice.active{border-color:var(--violet);background:rgba(140,124,255,.12);color:white}.lab-result{display:grid;align-content:center;gap:14px}.lab-result>div{padding:20px;border-top:1px solid var(--line)}.lab-result small{font:500 .57rem Consolas;color:#707380;display:block;margin-bottom:8px}.lab-result strong{font-size:1.1rem;line-height:1.4}.tool-cards{margin:20px 0 0 115px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.tool-card{padding:25px;border:1px solid var(--line);border-radius:18px;background:transparent;color:white;text-align:left;min-height:245px;transition:.25s}.tool-card:hover{background:var(--panel);transform:translateY(-4px)}.tool-card>span{font:400 .65rem Consolas;color:var(--violet)}.tool-card h3{font-size:1.5rem;margin:34px 0 8px}.tool-card p{color:var(--muted);line-height:1.6;font-size:.9rem}.tool-card button{border:0;background:none;padding:0;color:white;font-weight:800;cursor:pointer;margin-top:14px}
-.education-grid{margin-left:115px;display:grid;grid-template-columns:.9fr 1.1fr;gap:90px}.education-copy p{font-size:1.02rem;color:#b6b8c0;line-height:1.85}.representations{border-top:1px solid var(--line)}.representation{width:100%;display:grid;grid-template-columns:60px 1fr 1fr;align-items:center;text-align:left;background:transparent;color:white;border:0;border-bottom:1px solid var(--line);padding:20px 0;cursor:pointer;transition:.2s}.representation span{font:500 .8rem Consolas;color:#666a79}.representation strong{font-size:1.15rem}.representation small{color:#777985}.representation.active span,.representation.active strong{color:var(--cyan)}#rep-description{padding:20px 0;color:var(--muted);line-height:1.7}
-.application-list{margin-left:115px}.application-list article{display:grid;grid-template-columns:70px 1fr 1.1fr;gap:25px;align-items:center;padding:27px 0;border-top:1px solid var(--line)}.application-list article span{font:400 .65rem Consolas;color:#6b6e7a}.application-list h3{font-size:1.4rem;margin:0}.application-list p{margin:0;color:var(--muted)}
-.mentalist-section{width:100%;max-width:none;background:#11100f;padding-left:max(28px,calc((100vw - var(--max))/2));padding-right:max(28px,calc((100vw - var(--max))/2));overflow:hidden;border-top:1px solid rgba(255,102,88,.16)}.mentalist-section .section-side{left:max(28px,calc((100vw - var(--max))/2))}.mentalist-main{margin-left:115px;max-width:1100px}.mentalist-main h2{font-size:clamp(3.4rem,6vw,6.8rem);line-height:.9;letter-spacing:-.065em;margin:20px 0 30px}.mentalist-main h2 em{font-family:Georgia,serif;color:var(--warm);font-weight:400}.mentalist-lead{max-width:800px;color:#b9b4b0;font-size:1.08rem;line-height:1.75}.case-file{margin-top:55px;border:1px solid rgba(255,102,88,.3);background:rgba(255,102,88,.035);display:grid;grid-template-columns:150px 1fr}.case-stamp{font:500 .85rem Consolas;color:var(--warm);padding:30px;border-right:1px solid rgba(255,102,88,.25)}.case-copy{padding:30px 36px}.case-copy small,.jane-note small{font:500 .62rem Consolas;color:#8d817d;letter-spacing:.08em}.case-copy h3{font-size:2rem;letter-spacing:-.03em;margin:10px 0}.case-copy p{color:#b4adaa;line-height:1.7}.jane-note{margin-top:16px;display:grid;grid-template-columns:70px 1fr;gap:20px;border-top:1px solid rgba(255,255,255,.1);padding-top:25px}.jane-symbol{width:54px;height:54px;border-radius:50%;border:1px solid var(--warm);display:grid;place-items:center;font:500 1.1rem Consolas;color:var(--warm)}.jane-note p{margin:6px 0;color:#aaa3a0;line-height:1.65}.red-thread{position:absolute;height:1px;background:linear-gradient(90deg,transparent,var(--warm),transparent);opacity:.18;transform-origin:left}.thread-one{width:750px;right:-130px;top:220px;transform:rotate(-22deg)}.thread-two{width:620px;right:-70px;bottom:170px;transform:rotate(17deg)}
-.reference-list{margin-left:115px}.reference-list article{display:grid;grid-template-columns:80px 1fr 120px;gap:25px;padding:27px 0;border-top:1px solid var(--line);align-items:start}.reference-list>article>span{font:500 .72rem Consolas;color:var(--violet)}.reference-list h3{margin:0 0 5px;font-size:1.12rem}.reference-list p{margin:0 0 8px;color:var(--muted)}.reference-list>article>small{text-align:right;font:500 .58rem Consolas;color:#696c78}.project-section{border-top:1px solid var(--line);display:grid;grid-template-columns:1.25fr .75fr;gap:80px}.project-section h2{font-size:clamp(2.8rem,4.8vw,5rem);line-height:1;letter-spacing:-.055em;margin:20px 0}.project-meta p{border-top:1px solid var(--line);padding:18px 0;margin:0}.project-meta span{display:block;font:500 .56rem Consolas;color:#686b77;margin-bottom:6px}footer{width:min(calc(100% - 56px),var(--max));margin:auto;padding:30px 0 45px;border-top:1px solid var(--line);display:flex;justify-content:space-between;font:400 .66rem Consolas;color:#757884}footer a{text-decoration:none}
-.modal{position:fixed;inset:0;z-index:80;display:grid;place-items:center;opacity:0;visibility:hidden;transition:.2s}.modal.open{opacity:1;visibility:visible}.modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.72);backdrop-filter:blur(8px)}.modal-card{position:relative;z-index:2;width:min(540px,calc(100% - 30px));background:#151822;border:1px solid var(--line);border-radius:22px;padding:35px;box-shadow:0 30px 100px rgba(0,0,0,.5)}.modal-card h3{font-size:2.2rem;margin:12px 0}.modal-card p{color:var(--muted);line-height:1.75}.modal-close{position:absolute;right:16px;top:12px;border:0;background:none;color:white;font-size:1.6rem;cursor:pointer}.reveal{opacity:1;transform:none}
-@media(max-width:980px){.nav{display:none;position:absolute;top:70px;right:20px;padding:20px;background:#11141c;border:1px solid var(--line);border-radius:16px;flex-direction:column}.nav.open{display:flex}.menu-toggle{display:block}.hero{grid-template-columns:1fr;padding-top:135px}.hero-visual{min-height:480px}.hero-foot{position:static;margin-top:30px}.section-side{display:none}.section-heading,.content-columns,.communication-lab,.tool-cards,.education-grid,.application-list,.mentalist-main,.reference-list{margin-left:0}.content-columns,.education-grid{grid-template-columns:1fr}.communication-lab{grid-template-columns:1fr}.tool-cards{grid-template-columns:1fr 1fr}.project-section{grid-template-columns:1fr}.manifesto-grid{margin-left:0}.case-file{grid-template-columns:1fr}.case-stamp{border-right:0;border-bottom:1px solid rgba(255,102,88,.25)}}
-@media(max-width:640px){.section{width:min(calc(100% - 28px),var(--max));padding:90px 0}.site-header{padding:0 15px}.brand-copy{display:none}.hero{padding-top:115px}.hero h1{font-size:clamp(3.6rem,17vw,5.2rem)}.hero-actions{flex-direction:column;align-items:flex-start}.hero-visual{min-height:390px;transform:scale(.86);margin:-20px}.ring-one{width:390px;height:390px}.ring-two{width:280px;height:280px}.manifesto-grid{grid-template-columns:1fr;gap:18px}.section-heading h2{font-size:3rem}.content-columns{gap:35px}.tool-cards{grid-template-columns:1fr}.communication-lab{padding:25px}.application-list article{grid-template-columns:45px 1fr}.application-list p{grid-column:2}.representation{grid-template-columns:45px 1fr}.representation small{grid-column:2}.mentalist-section{padding-left:14px;padding-right:14px}.case-copy{padding:24px}.case-copy h3{font-size:1.6rem}.reference-list article{grid-template-columns:60px 1fr}.reference-list>article>small{display:none}.project-section{gap:25px}.cursor-glow{display:none}}
-
-/* ===== Ajuste de tipografia ===== */
-
-.hero h1 {
-  font-size: clamp(3rem, 5.5vw, 5.6rem);
-  line-height: .92;
-}
-
-.section-heading h2 {
-  font-size: clamp(2.2rem, 4vw, 4rem);
-  line-height: 1;
-  margin-bottom: 45px;
-}
-
-.big-quote {
-  font-size: clamp(2.8rem, 6vw, 6rem);
-  line-height: .95;
-}
-
-.mentalist-main h2 {
-  font-size: clamp(2.7rem, 4.8vw, 4.8rem);
-  line-height: .95;
-}
-
-.project-section h2 {
-  font-size: clamp(2.3rem, 4vw, 4rem);
-}
-
-.lab-copy h3 {
-  font-size: 2rem;
-}
-
-.case-copy h3 {
-  font-size: 1.65rem;
-}
-
-/* ===== Sumário visual ===== */
-
-.index-section {
-  width: min(calc(100% - 56px), var(--max));
-  margin: auto;
-  padding: 70px 0 110px;
-  border-top: 1px solid var(--line);
-}
-
-.index-title {
-  margin-bottom: 42px;
-}
-
-.index-title span {
-  font: 500 .65rem Consolas;
-  letter-spacing: .15em;
-  color: var(--violet);
-}
-
-.index-title h2 {
-  font-size: clamp(2rem, 3vw, 3rem);
-  margin: 10px 0 0;
-  letter-spacing: -.04em;
-}
-
-.site-index {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0 60px;
-}
-
-.site-index a {
-  display: grid;
-  grid-template-columns: 45px 1fr auto;
-  align-items: center;
-  gap: 15px;
-
-  padding: 22px 0;
-  border-top: 1px solid var(--line);
-
-  color: var(--text);
-  text-decoration: none;
-
-  transition: .2s;
-}
-
-.site-index a:hover {
-  padding-left: 10px;
-  border-color: var(--violet);
-}
-
-.site-index a > span {
-  font: 500 .65rem Consolas;
-  color: var(--violet);
-}
-
-.site-index strong {
-  font-size: 1.05rem;
-}
-
-.site-index small {
-  color: var(--muted);
-  font-size: .75rem;
-}
-
-@media (max-width: 750px) {
-
-  .site-index {
-    grid-template-columns: 1fr;
-  }
-
-  .site-index a {
-    grid-template-columns: 40px 1fr;
-  }
-
-  .site-index small {
-    display: none;
-  }
-}
-
-.content-columns > div p,
-.education-copy p,
-.mentalist-lead,
-.case-copy p {
-  max-width: 72ch;
-}
-
-/* ===== Imagens - O Mentalista ===== */
-
-.mentalist-gallery {
-  position: relative;
-  width: 420px;
-  height: 360px;
-  margin: 45px 20px 65px auto;
-}
-
-.jane-card {
-  position: absolute;
-  width: 255px;
-  height: 310px;
-  margin: 0;
-  overflow: hidden;
-
-  background: #0b0b0b;
-  border: 1px solid rgba(255, 102, 88, .35);
-  box-shadow: 0 22px 55px rgba(0, 0, 0, .5);
-
-  cursor: pointer;
-
-  transition:
-    transform .35s ease,
-    opacity .35s ease,
-    filter .35s ease,
-    box-shadow .35s ease;
-}
-
-.jane-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-
-  filter: grayscale(100%) contrast(1.07);
-
-  transition:
-    filter .35s ease,
-    transform .35s ease;
-}
-
-.jane-card figcaption {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-
-  padding: 45px 16px 14px;
-
-  background:
-    linear-gradient(
-      transparent,
-      rgba(0, 0, 0, .92)
-    );
-
-  color: #e4e1de;
-  font: 500 .58rem Consolas;
-  letter-spacing: .09em;
-}
-
-
-/* imagem do xadrez */
-
-.jane-card-back {
-  left: 0;
-  top: 25px;
-  transform: rotate(-5deg);
-  z-index: 1;
-}
-
-
-/* imagem principal */
-
-.jane-card-front {
-  right: 0;
-  top: 0;
-  transform: rotate(4deg);
-  z-index: 2;
-}
-
-
-/* quando passa o mouse na área */
-
-.mentalist-gallery:hover .jane-card {
-  opacity: .45;
-}
-
-
-/* imagem selecionada */
-
-.mentalist-gallery .jane-card:hover {
-  z-index: 10;
-
-  opacity: 1;
-
-  transform:
-    translateY(-10px)
-    rotate(0deg)
-    scale(1.06);
-
-  box-shadow: 0 30px 70px rgba(0, 0, 0, .65);
-}
-
-.mentalist-gallery .jane-card:hover img {
-  filter: grayscale(10%) contrast(1.04);
-  transform: scale(1.035);
-}
-
-
-/* ===== Símbolo do Red John ===== */
-
-.red-john-mark {
-  position: absolute;
-
-  width: 680px;
-  height: 680px;
-
-  right: -230px;
-  top: -70px;
-
-  background: var(--warm);
-
-  -webkit-mask:
-    url("assets/images/redjohntcc.png")
-    center / contain
-    no-repeat;
-
-  mask:
-    url("assets/images/redjohntcc.png")
-    center / contain
-    no-repeat;
-
-  opacity: .07;
-
-  transform: rotate(9deg);
-
-  pointer-events: none;
-  user-select: none;
-
-  z-index: 0;
-}
-
-.mentalist-main {
-  position: relative;
-  z-index: 2;
-}
-
-.mentalist-section .section-side {
-  position: absolute;
-  z-index: 2;
-}
-
-
-/* ===== Responsividade ===== */
-
-.mentalist-intro {
-  display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(360px, .85fr);
-  gap: 70px;
-  align-items: center;
-  margin-top: 25px;
-  margin-bottom: 75px;
-}
-
-.mentalist-intro-copy {
-  max-width: 650px;
-}
-
-.mentalist-gallery {
-  position: relative;
-  width: 430px;
-  height: 340px;
-  margin: 0;
-  justify-self: end;
-}
-@media (max-width: 850px) {
-
-  .mentalist-intro {
-    grid-template-columns: 1fr;
-    gap: 35px;
-  }
-
-  .mentalist-intro-copy {
-    max-width: 100%;
-  }
-
-  .mentalist-gallery {
-    width: 100%;
-    max-width: 430px;
-    height: 340px;
-    margin: 20px auto 0;
-    justify-self: center;
-  }
-
-  .jane-card {
-    width: 215px;
-    height: 270px;
-  }
-
-  .red-john-mark {
-    width: 320px;
-    height: 320px;
-    right: -120px;
-    top: 120px;
-  }
-}
-
-/* ===== Brilho que acompanha o mouse ===== */
-
-.cursor-glow {
-  width: 400px;
-  height: 400px;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(139, 124, 255, 0.16) 0%,
-      rgba(140, 124, 255, .07) 35%,
-      transparent 70%
-    );
-}
-</style>
-</head>
-<body>
-  <div class="noise" aria-hidden="true"></div>
-  <div class="cursor-glow" aria-hidden="true"></div>
-
-  <header class="site-header">
-    <a class="brand" href="#inicio" aria-label="Voltar ao início">
-      <span class="brand-symbol">P<span>N</span>L</span>
-      <span class="brand-copy">Programação<br>Neurolinguística</span>
-    </a>
-
-    <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
-      <span></span><span></span>
-    </button>
-
-    <nav class="nav" aria-label="Navegação principal">
-      <a href="#conceito">Conceito</a>
-      <a href="#comunicacao">Comunicação</a>
-      <a href="#educacao">Educação</a>
-      <a href="#aplicacoes">Aplicações</a>
-      <a href="#mentalista">O Mentalista</a>
-      <a href="#referencias">Referências</a>
-    </nav>
-  </header>
-
-  <main>
-    <section id="inicio" class="hero section">
-      <div class="hero-copy reveal">
-        <div class="eyebrow"><span></span> TCC · TÉCNICO EM INFORMÁTICA · 2026</div>
-        <h1>O que acontece<br>entre <em>pensar</em><br>e <em>comunicar?</em></h1>
-        <p class="hero-lead">Uma experiência interativa sobre Programação Neurolinguística e as relações que a abordagem propõe entre linguagem, percepção, comportamento e comunicação humana.</p>
-        <div class="hero-actions">
-          <a class="button primary" href="#conceito">Começar a explorar <span>↘</span></a>
-          <a class="button ghost" href="#referencias">Ver referencial teórico</a>
-        </div>
-      </div>
-
-      <div class="hero-visual reveal" aria-label="Diagrama interativo de PNL">
-        <div class="visual-ring ring-one"></div>
-        <div class="visual-ring ring-two"></div>
-        <div class="visual-ring ring-three"></div>
-        <div class="signal signal-a"></div>
-        <div class="signal signal-b"></div>
-        <div class="signal signal-c"></div>
-        <button class="concept-node node-language" data-node="linguagem"><small>01</small>LINGUAGEM</button>
-        <button class="concept-node node-thought" data-node="pensamento"><small>02</small>PENSAMENTO</button>
-        <button class="concept-node node-behavior" data-node="comportamento"><small>03</small>COMPORTAMENTO</button>
-        <div class="visual-core"><span>EXPERIÊNCIA</span><strong>SUBJETIVA</strong></div>
-        <p class="visual-hint">toque nos conceitos</p>
-      </div>
-
-      <div class="hero-foot">
-        <span>MATHEUS CARDIAS COSTA</span>
-        <span>Santa Maria · RS</span>
-      </div>
-    </section>
-
-    <section class="index-section">
-
-  <div class="index-title">
-    <span>MAPA DO PROJETO</span>
-    <h2>Explore o conteúdo</h2>
-  </div>
-
-  <div class="site-index">
-
-    <a href="#conceito">
-      <span>01</span>
-      <strong>Conceito</strong>
-      <small>Origem e fundamentos</small>
-    </a>
-
-    <a href="#comunicacao">
-      <span>02</span>
-      <strong>Comunicação</strong>
-      <small>Linguagem e comportamento</small>
-    </a>
-
-    <a href="#educacao">
-      <span>03</span>
-      <strong>Educação</strong>
-      <small>Ensino e aprendizagem</small>
-    </a>
-
-    <a href="#aplicacoes">
-      <span>04</span>
-      <strong>Aplicações</strong>
-      <small>Contextos profissionais</small>
-    </a>
-
-    <a href="#mentalista">
-      <span>05</span>
-      <strong>O Mentalista</strong>
-      <small>PNL na cultura popular</small>
-    </a>
-
-    <a href="#referencias">
-      <span>06</span>
-      <strong>Referências</strong>
-      <small>Livros e artigos</small>
-    </a>
-
-  </div>
-
-</section>
-
-    <section class="manifesto section reveal">
-      <p class="big-quote">“O mapa não é o território.”</p>
-      <div class="manifesto-grid">
-        <span>UM DOS PRESSUPOSTOS ASSOCIADOS À PNL</span>
-        <p>Em vez de respondermos ao mundo de forma totalmente direta, construímos representações daquilo que vivemos. A PNL parte dessa ideia para investigar como linguagem, percepção e padrões de comportamento se relacionam.</p>
-      </div>
-    </section>
-
-    <section id="conceito" class="section content-section">
-      <div class="section-side"><span>01</span><p>FUNDAMENTOS</p></div>
-      <div class="section-heading reveal">
-        <p class="eyebrow"><span></span> O QUE É PNL?</p>
-        <h2>Uma abordagem criada para observar <em>padrões de comunicação</em> e experiência.</h2>
-      </div>
-      <div class="content-columns reveal">
-        <div>
-          <p>A Programação Neurolinguística surgiu na década de 1970 a partir dos trabalhos de <strong>Richard Bandler e John Grinder</strong>. Seus autores estudaram padrões de linguagem e comportamento observados em profissionais como Virginia Satir, Fritz Perls e Milton Erickson.</p>
-          <p>A proposta inicial era identificar estruturas recorrentes em formas consideradas eficazes de comunicação e organizá-las em modelos que pudessem ser observados e reproduzidos.</p>
-        </div>
-        <aside class="source-note">
-          <span>FONTE-BASE</span>
-          <strong>Bandler & Grinder</strong>
-          <p><em>The Structure of Magic I</em>, 1975.</p>
-          <a href="#ref-bandler">Ver nas referências →</a>
-        </aside>
-      </div>
-    </section>
-
-    <section id="comunicacao" class="section communication-section">
-      <div class="section-side"><span>02</span><p>COMUNICAÇÃO</p></div>
-      <div class="section-heading reveal">
-        <p class="eyebrow"><span></span> LINGUAGEM · PENSAMENTO · COMPORTAMENTO</p>
-        <h2>A mensagem não termina quando é <em>dita.</em></h2>
-      </div>
-
-      <div class="communication-lab reveal">
-        <div class="lab-copy">
-          <span class="micro-label">EXPERIMENTO INTERATIVO</span>
-          <h3>Uma mesma situação.<br>Interpretações diferentes.</h3>
-          <p>Escolha uma interpretação para observar como a maneira de representar uma experiência pode alterar o estado emocional e a resposta comportamental.</p>
-          <div class="scenario-box">
-            <small>SITUAÇÃO</small>
-            <strong>“Você precisa apresentar seu trabalho para uma sala cheia.”</strong>
-          </div>
-          <div class="choice-row">
-            <button class="choice active" data-scenario="ameaça">“Vou passar vergonha.”</button>
-            <button class="choice" data-scenario="oportunidade">“É uma chance de mostrar o que aprendi.”</button>
-            <button class="choice" data-scenario="curiosidade">“Quero ver como vou me sair.”</button>
-          </div>
-        </div>
-
-        <div class="lab-result" id="lab-result">
-          <div><small>INTERPRETAÇÃO</small><strong id="result-interpretation">Ameaça</strong></div>
-          <div><small>ESTADO</small><strong id="result-state">Tensão e nervosismo</strong></div>
-          <div><small>RESPOSTA POSSÍVEL</small><strong id="result-behavior">Evitar olhar para a turma ou acelerar a fala</strong></div>
-        </div>
-      </div>
-
-      <div class="tool-cards">
-        <article class="tool-card reveal" data-tech="rapport">
-          <span>01</span><h3>Rapport</h3>
-          <p>Sintonia, confiança e adaptação durante a interação.</p><button>explorar →</button>
-        </article>
-        <article class="tool-card reveal" data-tech="metamodelo">
-          <span>02</span><h3>Metamodelo</h3>
-          <p>Perguntas para esclarecer omissões, generalizações e distorções.</p><button>explorar →</button>
-        </article>
-        <article class="tool-card reveal" data-tech="modelagem">
-          <span>03</span><h3>Modelagem</h3>
-          <p>Observação e decomposição de estratégias e padrões.</p><button>explorar →</button>
-        </article>
-        <article class="tool-card reveal" data-tech="reenquadramento">
-          <span>04</span><h3>Reenquadramento</h3>
-          <p>Uma nova forma de atribuir contexto ou significado.</p><button>explorar →</button>
-        </article>
-      </div>
-    </section>
-
-    <section id="educacao" class="section education-section">
-      <div class="section-side"><span>03</span><p>EDUCAÇÃO</p></div>
-      <div class="section-heading reveal">
-        <p class="eyebrow"><span></span> ENSINO-APRENDIZAGEM</p>
-        <h2>Quando comunicar também significa <em>ensinar.</em></h2>
-      </div>
-
-      <div class="education-grid reveal">
-        <div class="education-copy">
-          <p>No ambiente educacional, a PNL é discutida como uma abordagem de comunicação que pode auxiliar o professor a observar diferenças na forma como os alunos recebem informações, adaptar sua linguagem e construir uma relação de maior proximidade.</p>
-          <p>Entre os conceitos utilizados pela PNL estão os chamados <strong>sistemas representacionais</strong>, tradicionalmente descritos como visual, auditivo e cinestésico.</p>
-          <a class="inline-link" href="#ref-educacao">Ver estudos usados neste tópico →</a>
-        </div>
-        <div class="representations">
-          <button class="representation active" data-rep="visual"><span>V</span><strong>Visual</strong><small>imagens · formas · espaço</small></button>
-          <button class="representation" data-rep="auditivo"><span>A</span><strong>Auditivo</strong><small>sons · ritmo · palavras</small></button>
-          <button class="representation" data-rep="cinestesico"><span>C</span><strong>Cinestésico</strong><small>sensações · movimento · experiência</small></button>
-          <p id="rep-description">Na terminologia da PNL, o sistema visual está relacionado à representação da experiência por imagens e elementos espaciais.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="aplicacoes" class="section applications-section">
-      <div class="section-side"><span>04</span><p>APLICAÇÕES</p></div>
-      <div class="section-heading reveal">
-        <p class="eyebrow"><span></span> ALÉM DA SALA DE AULA</p>
-        <h2>Comunicação em diferentes <em>contextos.</em></h2>
-      </div>
-
-      <div class="application-list reveal">
-        <article><span>01</span><h3>Desenvolvimento pessoal</h3><p>Autopercepção, comunicação e observação de padrões de resposta.</p></article>
-        <article><span>02</span><h3>Ambiente profissional</h3><p>Clareza de mensagens, relações interpessoais, apresentações e entrevistas.</p></article>
-        <article><span>03</span><h3>Liderança</h3><p>Escuta, adaptação da linguagem, negociação e condução de conversas.</p></article>
-        <article><span>04</span><h3>Conflitos</h3><p>Uso de perguntas específicas, reformulação e construção de entendimento.</p></article>
-      </div>
-    </section>
-
-    <section id="mentalista" class="section mentalist-section">
-      <div class="red-thread thread-one"></div><div class="red-thread thread-two"></div>
-      <img
-       class="red-john-mark"
-        src="assets/images/redjohntcc.png"
-        alt=""
-        aria-hidden="true"
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Programação Neurolinguística: contribuições para o desenvolvimento da comunicação humana. Site informativo do TCC de Matheus Cardias Costa."
+    />
+    <title>PNL — Comunicação, percepção e comportamento</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+    <div class="cursor-glow" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="Voltar ao início">
+        <span class="brand-symbol">P<span>N</span>L</span>
+        <span class="brand-copy"
+          >Programação<br />Neurolinguística</span
+        >
+      </a>
+
+      <button
+        class="menu-toggle"
+        aria-label="Abrir menu"
+        aria-expanded="false"
       >
-      <div class="section-side"><span>05</span><p>CULTURA POP</p></div>
-      <div class="mentalist-main reveal">
-        <p class="eyebrow warm"><span></span> THE MENTALIST</p>
-        <h2><em>O Mentalista</em><br>e a observação do comportamento </h2>
-        <div class="mentalist-intro">
-        <div class="mentalist-intro-copy">
-          <p class="mentalist-lead">
-            A série <em>O Mentalista</em> acompanha Patrick Jane, um ex-falso
-            vidente que passa a atuar como consultor em investigações criminais.
-            Em vez de possuir habilidades sobrenaturais, Jane se destaca
-            principalmente por sua capacidade de observação, pela interpretação
-            do comportamento humano e pela forma como conduz conversas para
-            obter informações.
+        <span></span><span></span>
+      </button>
+
+      <nav class="nav" aria-label="Navegação principal">
+        <a href="#conceito">Conceito</a>
+        <a href="#comunicacao">Comunicação</a>
+        <a href="#educacao">Educação</a>
+        <a href="#aplicacoes">Aplicações</a>
+        <a href="#mentalista">O Mentalista</a>
+        <a href="#referencias">Referências</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="inicio" class="hero section">
+        <div class="hero-copy reveal">
+          <div class="eyebrow">
+            <span></span> TCC · TÉCNICO EM INFORMÁTICA · 2026
+          </div>
+          <h1>
+            O que acontece<br />entre <em>pensar</em><br />e
+            <em>comunicar?</em>
+          </h1>
+          <p class="hero-lead">
+            Uma experiência interativa sobre Programação Neurolinguística e as
+            relações que a abordagem propõe entre linguagem, percepção,
+            comportamento e comunicação humana.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#conceito"
+              >Começar a explorar <span>↘</span></a
+            >
+            <a class="button ghost" href="#referencias"
+              >Ver referencial teórico</a
+            >
+          </div>
+        </div>
+
+        <div
+          class="hero-visual reveal"
+          aria-label="Diagrama interativo de PNL"
+        >
+          <div class="visual-ring ring-one"></div>
+          <div class="visual-ring ring-two"></div>
+          <div class="visual-ring ring-three"></div>
+          <div class="signal signal-a"></div>
+          <div class="signal signal-b"></div>
+          <div class="signal signal-c"></div>
+          <button class="concept-node node-language" data-node="linguagem">
+            <small>01</small>LINGUAGEM
+          </button>
+          <button class="concept-node node-thought" data-node="pensamento">
+            <small>02</small>PENSAMENTO
+          </button>
+          <button class="concept-node node-behavior" data-node="comportamento">
+            <small>03</small>COMPORTAMENTO
+          </button>
+          <div class="visual-core">
+            <span>EXPERIÊNCIA</span><strong>SUBJETIVA</strong>
+          </div>
+          <p class="visual-hint">toque nos conceitos</p>
+        </div>
+
+        <div class="hero-foot">
+          <span>MATHEUS CARDIAS COSTA</span>
+          <span>Santa Maria · RS</span>
+        </div>
+      </section>
+
+      <section class="index-section">
+        <div class="index-title">
+          <span>MAPA DO PROJETO</span>
+          <h2>Explore o conteúdo</h2>
+        </div>
+
+        <div class="site-index">
+          <a href="#conceito">
+            <span>01</span>
+            <strong>Conceito</strong>
+            <small>Origem e fundamentos</small>
+          </a>
+
+          <a href="#comunicacao">
+            <span>02</span>
+            <strong>Comunicação</strong>
+            <small>Linguagem e comportamento</small>
+          </a>
+
+          <a href="#educacao">
+            <span>03</span>
+            <strong>Educação</strong>
+            <small>Ensino e aprendizagem</small>
+          </a>
+
+          <a href="#aplicacoes">
+            <span>04</span>
+            <strong>Aplicações</strong>
+            <small>Contextos profissionais</small>
+          </a>
+
+          <a href="#mentalista">
+            <span>05</span>
+            <strong>O Mentalista</strong>
+            <small>PNL na cultura popular</small>
+          </a>
+
+          <a href="#referencias">
+            <span>06</span>
+            <strong>Referências</strong>
+            <small>Livros e artigos</small>
+          </a>
+        </div>
+      </section>
+
+      <section class="manifesto section reveal">
+        <p class="big-quote">“O mapa não é o território.”</p>
+        <div class="manifesto-grid">
+          <span>UM DOS PRESSUPOSTOS ASSOCIADOS À PNL</span>
+          <p>
+            Em vez de respondermos ao mundo de forma totalmente direta,
+            construímos representações daquilo que vivemos. A PNL parte dessa
+            ideia para investigar como linguagem, percepção e padrões de
+            comportamento se relacionam.
           </p>
         </div>
-        <div class="mentalist-gallery">
+      </section>
 
-        <figure class="jane-card jane-card-back">
-        <img
-            src="assets/images/xadreztcc.png"
-            alt="Patrick Jane jogando xadrez"
-        >
-        <figcaption>ESTRATÉGIA · OBSERVAÇÃO</figcaption>
-      </figure>
-
-      <figure class="jane-card jane-card-front">
-        <img
-            src="assets/images/mentalistatcc.png"
-            alt="Patrick Jane em O Mentalista"
-        >
-        <figcaption>COMPORTAMENTO</figcaption>
-      </figure>
+      <section id="conceito" class="section content-section">
+        <div class="section-side">
+          <span>01</span>
+          <p>FUNDAMENTOS</p>
+        </div>
+        <div class="section-heading reveal">
+          <p class="eyebrow"><span></span> O QUE É PNL?</p>
+          <h2>
+            Uma abordagem criada para observar
+            <em>padrões de comunicação</em> e experiência.
+          </h2>
+        </div>
+        <div class="content-columns reveal">
+          <div>
+            <p>
+              A Programação Neurolinguística surgiu na década de 1970 a partir
+              dos trabalhos de <strong>Richard Bandler e John Grinder</strong>.
+              Seus autores estudaram padrões de linguagem e comportamento
+              observados em profissionais como Virginia Satir, Fritz Perls e
+              Milton Erickson.
+            </p>
+            <p>
+              A proposta inicial era identificar estruturas recorrentes em
+              formas consideradas eficazes de comunicação e organizá-las em
+              modelos que pudessem ser observados e reproduzidos.
+            </p>
           </div>
+          <aside class="source-note">
+            <span>FONTE-BASE</span>
+            <strong>Bandler & Grinder</strong>
+            <p><em>The Structure of Magic I</em>, 1975.</p>
+            <a href="#ref-bandler">Ver nas referências →</a>
+          </aside>
+        </div>
+      </section>
+
+      <section id="comunicacao" class="section communication-section">
+        <div class="section-side">
+          <span>02</span>
+          <p>COMUNICAÇÃO</p>
+        </div>
+        <div class="section-heading reveal">
+          <p class="eyebrow">
+            <span></span> LINGUAGEM · PENSAMENTO · COMPORTAMENTO
+          </p>
+          <h2>A mensagem não termina quando é <em>dita.</em></h2>
+        </div>
+
+        <div class="communication-lab reveal">
+          <div class="lab-copy">
+            <span class="micro-label">EXPERIMENTO INTERATIVO</span>
+            <h3>Uma mesma situação.<br />Interpretações diferentes.</h3>
+            <p>
+              Escolha uma interpretação para observar como a maneira de
+              representar uma experiência pode alterar o estado emocional e a
+              resposta comportamental.
+            </p>
+            <div class="scenario-box">
+              <small>SITUAÇÃO</small>
+              <strong
+                >“Você precisa apresentar seu trabalho para uma sala
+                cheia.”</strong
+              >
+            </div>
+            <div class="choice-row">
+              <button class="choice active" data-scenario="ameaça">
+                “Vou passar vergonha.”
+              </button>
+              <button class="choice" data-scenario="oportunidade">
+                “É uma chance de mostrar o que aprendi.”
+              </button>
+              <button class="choice" data-scenario="curiosidade">
+                “Quero ver como vou me sair.”
+              </button>
+            </div>
+          </div>
+
+          <div class="lab-result" id="lab-result">
+            <div>
+              <small>INTERPRETAÇÃO</small>
+              <strong id="result-interpretation">Ameaça</strong>
+            </div>
+            <div>
+              <small>ESTADO</small>
+              <strong id="result-state">Tensão e nervosismo</strong>
+            </div>
+            <div>
+              <small>RESPOSTA POSSÍVEL</small>
+              <strong id="result-behavior"
+                >Evitar olhar para a turma ou acelerar a fala</strong
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="tool-cards">
+          <article class="tool-card reveal" data-tech="rapport">
+            <span>01</span>
+            <h3>Rapport</h3>
+            <p>Sintonia, confiança e adaptação durante a interação.</p>
+            <button>explorar →</button>
+          </article>
+          <article class="tool-card reveal" data-tech="metamodelo">
+            <span>02</span>
+            <h3>Metamodelo</h3>
+            <p>
+              Perguntas para esclarecer omissões, generalizações e distorções.
+            </p>
+            <button>explorar →</button>
+          </article>
+          <article class="tool-card reveal" data-tech="modelagem">
+            <span>03</span>
+            <h3>Modelagem</h3>
+            <p>Observação e decomposição de estratégias e padrões.</p>
+            <button>explorar →</button>
+          </article>
+          <article class="tool-card reveal" data-tech="reenquadramento">
+            <span>04</span>
+            <h3>Reenquadramento</h3>
+            <p>Uma nova forma de atribuir contexto ou significado.</p>
+            <button>explorar →</button>
+          </article>
+        </div>
+      </section>
+
+      <section id="educacao" class="section education-section">
+        <div class="section-side">
+          <span>03</span>
+          <p>EDUCAÇÃO</p>
+        </div>
+        <div class="section-heading reveal">
+          <p class="eyebrow"><span></span> ENSINO-APRENDIZAGEM</p>
+          <h2>Quando comunicar também significa <em>ensinar.</em></h2>
+        </div>
+
+        <div class="education-grid reveal">
+          <div class="education-copy">
+            <p>
+              No ambiente educacional, a PNL é discutida como uma abordagem de
+              comunicação que pode auxiliar o professor a observar diferenças
+              na forma como os alunos recebem informações, adaptar sua
+              linguagem e construir uma relação de maior proximidade.
+            </p>
+            <p>
+              Entre os conceitos utilizados pela PNL estão os chamados
+              <strong>sistemas representacionais</strong>, tradicionalmente
+              descritos como visual, auditivo e cinestésico.
+            </p>
+            <a class="inline-link" href="#ref-educacao"
+              >Ver estudos usados neste tópico →</a
+            >
+          </div>
+          <div class="representations">
+            <button class="representation active" data-rep="visual">
+              <span>V</span><strong>Visual</strong
+              ><small>imagens · formas · espaço</small>
+            </button>
+            <button class="representation" data-rep="auditivo">
+              <span>A</span><strong>Auditivo</strong
+              ><small>sons · ritmo · palavras</small>
+            </button>
+            <button class="representation" data-rep="cinestesico">
+              <span>C</span><strong>Cinestésico</strong
+              ><small>sensações · movimento · experiência</small>
+            </button>
+            <p id="rep-description">
+              Na terminologia da PNL, o sistema visual está relacionado à
+              representação da experiência por imagens e elementos espaciais.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="aplicacoes" class="section applications-section">
+        <div class="section-side">
+          <span>04</span>
+          <p>APLICAÇÕES</p>
+        </div>
+        <div class="section-heading reveal">
+          <p class="eyebrow"><span></span> ALÉM DA SALA DE AULA</p>
+          <h2>Comunicação em diferentes <em>contextos.</em></h2>
+        </div>
+
+        <div class="application-list reveal">
+          <article>
+            <span>01</span>
+            <h3>Desenvolvimento pessoal</h3>
+            <p>
+              Autopercepção, comunicação e observação de padrões de resposta.
+            </p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Ambiente profissional</h3>
+            <p>
+              Clareza de mensagens, relações interpessoais, apresentações e
+              entrevistas.
+            </p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Liderança</h3>
+            <p>
+              Escuta, adaptação da linguagem, negociação e condução de
+              conversas.
+            </p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>Conflitos</h3>
+            <p>
+              Uso de perguntas específicas, reformulação e construção de
+              entendimento.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="mentalista" class="section mentalist-section">
+        <div class="red-thread thread-one"></div>
+        <div class="red-thread thread-two"></div>
+        <img
+          class="red-john-mark"
+          src="assets/images/redjohntcc.png"
+          alt=""
+          aria-hidden="true"
+        />
+        <div class="section-side">
+          <span>05</span>
+          <p>CULTURA POP</p>
+        </div>
+        <div class="mentalist-main reveal">
+          <p class="eyebrow warm"><span></span> THE MENTALIST</p>
+          <h2>
+            <em>O Mentalista</em><br />e a observação do comportamento
+          </h2>
+          <div class="mentalist-intro">
+            <div class="mentalist-intro-copy">
+              <p class="mentalist-lead">
+                A série <em>O Mentalista</em> acompanha Patrick Jane, um
+                ex-falso vidente que passa a atuar como consultor em
+                investigações criminais. Em vez de possuir habilidades
+                sobrenaturais, Jane se destaca principalmente por sua capacidade
+                de observação, pela interpretação do comportamento humano e
+                pela forma como conduz conversas para obter informações.
+              </p>
+            </div>
+            <div class="mentalist-gallery">
+              <figure class="jane-card jane-card-back">
+                <img
+                  src="assets/images/xadreztcc.png"
+                  alt="Patrick Jane jogando xadrez"
+                />
+                <figcaption>ESTRATÉGIA · OBSERVAÇÃO</figcaption>
+              </figure>
+
+              <figure class="jane-card jane-card-front">
+                <img
+                  src="assets/images/mentalistatcc.png"
+                  alt="Patrick Jane em O Mentalista"
+                />
+                <figcaption>COMPORTAMENTO</figcaption>
+              </figure>
+            </div>
           </div>
           <div class="case-file">
-          <div class="case-stamp">
-          OBSERVAR<br>
-          INTERPRETAR<br>
-          COMUNICAR
-        </div>
-          <div class="case-copy">
-            <small>COMUNICAÇÃO E COMPORTAMENTO</small>
-            <h3>Mais do que simplesmente observar</h3>
-            <p>
-              Durante as investigações, Jane presta atenção a detalhes que muitas vezes passam despercebidos: mudanças de comportamento, maneira de falar, reações emocionais, postura, contradições no discurso e respostas produzidas durante uma conversa.
-            </p>
-            <p>
-              Ele também costuma adaptar sua forma de abordagem conforme a pessoa com quem está interagindo, fazendo perguntas, conduzindo conversas e criando situações que permitem observar novas reações.
-            </p>
-            <p>
-              Essas características podem ser relacionadas a alguns temas estudados neste trabalho, como <strong>observação da comunicação verbal e não verbal, adaptação da linguagem, rapport e identificação de padrões de comportamento</strong>.
-            </p>
-            <p>
-              Essa relação é usada apenas como referência cultural. A série não apresenta Patrick Jane como um praticante de Programação Neurolinguística.
-            </p>
+            <div class="case-stamp">
+              OBSERVAR<br />
+              INTERPRETAR<br />
+              COMUNICAR
+            </div>
+            <div class="case-copy">
+              <small>COMUNICAÇÃO E COMPORTAMENTO</small>
+              <h3>Mais do que simplesmente observar</h3>
+              <p>
+                Durante as investigações, Jane presta atenção a detalhes que
+                muitas vezes passam despercebidos: mudanças de comportamento,
+                maneira de falar, reações emocionais, postura, contradições no
+                discurso e respostas produzidas durante uma conversa.
+              </p>
+              <p>
+                Ele também costuma adaptar sua forma de abordagem conforme a
+                pessoa com quem está interagindo, fazendo perguntas, conduzindo
+                conversas e criando situações que permitem observar novas
+                reações.
+              </p>
+              <p>
+                Essas características podem ser relacionadas a alguns temas
+                estudados neste trabalho, como
+                <strong
+                  >observação da comunicação verbal e não verbal, adaptação da
+                  linguagem, rapport e identificação de padrões de
+                  comportamento</strong
+                >.
+              </p>
+              <p>
+                Essa relação é usada apenas como referência cultural. A série
+                não apresenta Patrick Jane como um praticante de Programação
+                Neurolinguística.
+              </p>
+            </div>
+          </div>
+
+          <div class="jane-note">
+            <div class="jane-symbol">J</div>
+            <div>
+              <small>JANE NÃO “LÊ MENTES”</small>
+              <p>
+                Apesar de ser chamado de mentalista, Patrick Jane não possui
+                poderes sobrenaturais. Grande parte de suas deduções é
+                apresentada como resultado da observação, da interpretação do
+                comportamento e da criação de situações capazes de provocar
+                respostas nas pessoas.
+              </p>
+              <p>
+                <strong
+                  >Observar não significa saber exatamente o que alguém pensa.
+                  Significa perceber sinais, formular hipóteses e buscar mais
+                  informações por meio da comunicação.</strong
+                >
+              </p>
+            </div>
           </div>
         </div>
+      </section>
 
-        <div class="jane-note">
-          <div class="jane-symbol">J</div>
-          <div><small>JANE NÃO “LÊ MENTES”</small><p>
-Apesar de ser chamado de mentalista, Patrick Jane não possui poderes sobrenaturais. Grande parte de suas deduções é apresentada como resultado da observação, da interpretação do comportamento e da criação de situações capazes de provocar respostas nas pessoas.
-</p>
-
-<p>
-<strong>Observar não significa saber exatamente o que alguém pensa. Significa perceber sinais, formular hipóteses e buscar mais informações por meio da comunicação.</strong>
-</p></div>
+      <section id="referencias" class="section references-section">
+        <div class="section-side">
+          <span>06</span>
+          <p>REFERÊNCIAS</p>
         </div>
-      </div>
-    </section>
+        <div class="section-heading reveal">
+          <p class="eyebrow"><span></span> REFERENCIAL TEÓRICO</p>
+          <h2>De onde vêm as <em>ideias.</em></h2>
+        </div>
 
-    <section id="referencias" class="section references-section">
-      <div class="section-side"><span>06</span><p>REFERÊNCIAS</p></div>
-      <div class="section-heading reveal">
-        <p class="eyebrow"><span></span> REFERENCIAL TEÓRICO</p>
-        <h2>De onde vêm as <em>ideias.</em></h2>
-      </div>
+        <div class="reference-list reveal">
+          <article id="ref-bandler">
+            <span>1975</span>
+            <div>
+              <h3>Bandler, Richard; Grinder, John</h3>
+              <p>
+                <em>The Structure of Magic I: A Book About Language and Therapy.</em>
+              </p>
+            </div>
+            <small>LIVRO</small>
+          </article>
+          <article>
+            <span>2006</span>
+            <div>
+              <h3>Azevedo, Regina Maria</h3>
+              <p>
+                <em>Programação Neurolinguística: transformação e persuasão no metamodelo.</em>
+                ECA-USP.
+              </p>
+              <a
+                href="https://teses.usp.br/teses/disponiveis/27/27142/tde-01122006-173633/pt-br.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                >abrir fonte ↗</a
+              >
+            </div>
+            <small>DISSERTAÇÃO</small>
+          </article>
+          <article id="ref-educacao">
+            <span>2008</span>
+            <div>
+              <h3>Dias, Roges Ghidini; Passos, Jair Sérgio dos</h3>
+              <p>
+                <em>Contribuições da Programação Neurolinguística no contexto educacional.</em>
+              </p>
+              <a
+                href="https://www.revistasuninter.com/intersaberes/index.php/revista/article/view/125"
+                target="_blank"
+                rel="noopener noreferrer"
+                >abrir artigo ↗</a
+              >
+            </div>
+            <small>ARTIGO</small>
+          </article>
+          <article>
+            <span>2010</span>
+            <div>
+              <h3>Tosey, Paul; Mathison, Jane</h3>
+              <p>
+                <em>Neuro-linguistic programming as an innovation in education and teaching.</em>
+              </p>
+              <a
+                href="https://openresearch.surrey.ac.uk/esploro/outputs/journalArticle/Neuro-linguistic-programming-as-an-innovation-in-education-and-teaching/99515504202346"
+                target="_blank"
+                rel="noopener noreferrer"
+                >abrir artigo ↗</a
+              >
+            </div>
+            <small>ARTIGO</small>
+          </article>
+          <article>
+            <span>2024</span>
+            <div>
+              <h3>Marcon, M.; Antoniolli Junior, P. C.; Giehl, G. L.</h3>
+              <p>
+                <em>Programação Neurolinguística (PNL): análise do sistema representacional dos acadêmicos e docentes.</em>
+              </p>
+              <a
+                href="https://periodicos.ufsc.br/index.php/gual/article/view/96017"
+                target="_blank"
+                rel="noopener noreferrer"
+                >abrir artigo ↗</a
+              >
+            </div>
+            <small>ARTIGO</small>
+          </article>
+          <article>
+            <span>2008</span>
+            <div>
+              <h3>O Mentalista — 2008</h3>
+              <p>Referência cultural utilizada no projeto.</p>
+              <a
+                href="https://www.adorocinema.com/series/serie-3905/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >ver resumo ↗</a
+              >
+            </div>
+            <small>AUDIOVISUAL</small>
+          </article>
+        </div>
+      </section>
 
-      <div class="reference-list reveal">
-        <article id="ref-bandler"><span>1975</span><div><h3>Bandler, Richard; Grinder, John</h3><p><em>The Structure of Magic I: A Book About Language and Therapy.</em></p></div><small>LIVRO</small></article>
-        <article><span>2006</span><div><h3>Azevedo, Regina Maria</h3><p><em>Programação Neurolinguística: transformação e persuasão no metamodelo.</em> ECA-USP.</p><a href="https://teses.usp.br/teses/disponiveis/27/27142/tde-01122006-173633/pt-br.html" target="_blank" rel="noopener noreferrer">abrir fonte ↗</a></div><small>DISSERTAÇÃO</small></article>
-        <article id="ref-educacao"><span>2008</span><div><h3>Dias, Roges Ghidini; Passos, Jair Sérgio dos</h3><p><em>Contribuições da Programação Neurolinguística no contexto educacional.</em></p><a href="https://www.revistasuninter.com/intersaberes/index.php/revista/article/view/125" target="_blank" rel="noopener noreferrer">abrir artigo ↗</a></div><small>ARTIGO</small></article>
-        <article><span>2010</span><div><h3>Tosey, Paul; Mathison, Jane</h3><p><em>Neuro-linguistic programming as an innovation in education and teaching.</em></p><a href="https://openresearch.surrey.ac.uk/esploro/outputs/journalArticle/Neuro-linguistic-programming-as-an-innovation-in-education-and-teaching/99515504202346" target="_blank" rel="noopener noreferrer">abrir artigo ↗</a></div><small>ARTIGO</small></article>
-        <article><span>2024</span><div><h3>Marcon, M.; Antoniolli Junior, P. C.; Giehl, G. L.</h3><p><em>Programação Neurolinguística (PNL): análise do sistema representacional dos acadêmicos e docentes.</em></p><a href="https://periodicos.ufsc.br/index.php/gual/article/view/96017" target="_blank" rel="noopener noreferrer">abrir artigo ↗</a></div><small>ARTIGO</small></article>
-        <article><span>2008</span><div><h3>O Mentalista — 2008</h3><p>Referência cultural utilizada no projeto.</p><a href="https://www.adorocinema.com/series/serie-3905/" target="_blank" rel="noopener noreferrer">ver resumo ↗</a></div><small>AUDIOVISUAL</small></article>
-      </div>
-    </section>
+      <section class="section project-section reveal">
+        <div>
+          <p class="eyebrow"><span></span> SOBRE O PROJETO</p>
+          <h2>
+            Programação Neurolinguística:<br /><em
+              >contribuições para o desenvolvimento da comunicação humana.</em
+            >
+          </h2>
+        </div>
+        <div class="project-meta">
+          <p><span>AUTOR</span>Matheus Cardias Costa</p>
+          <p>
+            <span>CURSO</span>Técnico em Informática Integrado ao Ensino Médio
+          </p>
+          <p><span>INSTITUIÇÃO</span>E.E.E.M. Profª. Maria Rocha</p>
+          <p><span>LOCAL</span>Santa Maria, RS · 2026</p>
+        </div>
+      </section>
+    </main>
 
-    <section class="section project-section reveal">
-      <div>
-        <p class="eyebrow"><span></span> SOBRE O PROJETO</p>
-        <h2>Programação Neurolinguística:<br><em>contribuições para o desenvolvimento da comunicação humana.</em></h2>
-      </div>
-      <div class="project-meta">
-        <p><span>AUTOR</span>Matheus Cardias Costa</p>
-        <p><span>CURSO</span>Técnico em Informática Integrado ao Ensino Médio</p>
-        <p><span>INSTITUIÇÃO</span>E.E.E.M. Profª. Maria Rocha</p>
-        <p><span>LOCAL</span>Santa Maria, RS · 2026</p>
-      </div>
-    </section>
-  </main>
+    <footer>
+      <span>PNL / TCC 2026</span>
+      <a href="#inicio">Voltar ao topo ↑</a>
+    </footer>
 
-  <footer>
-    <span>PNL / TCC 2026</span>
-    <a href="#inicio">Voltar ao topo ↑</a>
-  </footer>
-
-  <div class="modal" id="modal" aria-hidden="true">
-    <div class="modal-backdrop" data-close-modal></div>
-    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-      <button class="modal-close" data-close-modal aria-label="Fechar">×</button>
-      <span class="micro-label">CONCEITO</span>
-      <h3 id="modal-title"></h3>
-      <p id="modal-text"></p>
+    <div class="modal" id="modal" aria-hidden="true">
+      <div class="modal-backdrop" data-close-modal></div>
+      <div
+        class="modal-card"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-title"
+      >
+        <button class="modal-close" data-close-modal aria-label="Fechar">
+          ×
+        </button>
+        <span class="micro-label">CONCEITO</span>
+        <h3 id="modal-title"></h3>
+        <p id="modal-text"></p>
+      </div>
     </div>
-  </div>
 
-  <script>
-const revealEls = document.querySelectorAll('.reveal');
-const observer = new IntersectionObserver(entries => entries.forEach(entry => {
-  if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
-}), { threshold: .1 });
-revealEls.forEach((el,i)=>{ el.style.transitionDelay=`${Math.min(i%4,3)*60}ms`; observer.observe(el); });
-
-const nav = document.querySelector('.nav');
-const menuToggle = document.querySelector('.menu-toggle');
-menuToggle.addEventListener('click',()=>{ const open=nav.classList.toggle('open'); menuToggle.setAttribute('aria-expanded',String(open)); });
-nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
-
-const glow = document.querySelector('.cursor-glow');
-window.addEventListener('pointermove',e=>{ glow.style.left=e.clientX+'px'; glow.style.top=e.clientY+'px'; });
-
-const modal = document.querySelector('#modal');
-const modalTitle = document.querySelector('#modal-title');
-const modalText = document.querySelector('#modal-text');
-const concepts = {
-  linguagem:['Linguagem','Na PNL, a linguagem é observada como uma pista da maneira como o indivíduo representa suas experiências. O metamodelo procura tornar mensagens mais específicas por meio de perguntas.'],
-  pensamento:['Pensamento','A abordagem propõe que experiências são filtradas e organizadas internamente. A interpretação atribuída a uma situação influencia as possibilidades de resposta percebidas pelo indivíduo.'],
-  comportamento:['Comportamento','A PNL procura identificar padrões de ação e comunicação e propõe estratégias para ampliar alternativas comportamentais em diferentes contextos.'],
-  rapport:['Rapport','Na terminologia da PNL, rapport é o estabelecimento de sintonia e confiança entre interlocutores, considerando elementos como ritmo, postura, linguagem e atenção à resposta do outro.'],
-  metamodelo:['Metamodelo de linguagem','Estrutura de perguntas desenvolvida por Bandler e Grinder para investigar omissões, generalizações e distorções presentes na linguagem e tornar enunciados mais específicos.'],
-  modelagem:['Modelagem','Processo de observar e decompor estratégias e padrões usados por outra pessoa, buscando compreender como determinado desempenho é organizado.'],
-  reenquadramento:['Reenquadramento','Mudança de contexto ou significado atribuído a uma experiência, com o objetivo de produzir novas interpretações e ampliar possíveis respostas.']
-};
-function openModal(key){ const item=concepts[key]; if(!item)return; modalTitle.textContent=item[0]; modalText.textContent=item[1]; modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); }
-document.querySelectorAll('[data-node]').forEach(el=>el.addEventListener('click',()=>openModal(el.dataset.node)));
-document.querySelectorAll('[data-tech]').forEach(el=>el.addEventListener('click',()=>openModal(el.dataset.tech)));
-document.querySelectorAll('[data-close-modal]').forEach(el=>el.addEventListener('click',()=>{modal.classList.remove('open');modal.setAttribute('aria-hidden','true')}));
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){modal.classList.remove('open');modal.setAttribute('aria-hidden','true')}});
-
-const scenarios={
-  ameaça:['Ameaça','Tensão e nervosismo','Evitar olhar para a turma ou acelerar a fala'],
-  oportunidade:['Oportunidade','Maior confiança e foco','Organizar a explicação e buscar contato com a turma'],
-  curiosidade:['Curiosidade','Atenção e abertura','Observar a própria reação e ajustar a apresentação conforme ela acontece']
-};
-document.querySelectorAll('.choice').forEach(btn=>btn.addEventListener('click',()=>{
-  document.querySelectorAll('.choice').forEach(b=>b.classList.remove('active')); btn.classList.add('active');
-  const [a,b,c]=scenarios[btn.dataset.scenario];
-  document.querySelector('#result-interpretation').textContent=a; document.querySelector('#result-state').textContent=b; document.querySelector('#result-behavior').textContent=c;
-}));
-
-const reps={
-  visual:'Na terminologia da PNL, o sistema visual está relacionado à representação da experiência por imagens, formas, cores e organização espacial.',
-  auditivo:'Na terminologia da PNL, o sistema auditivo está relacionado à representação da experiência por sons, palavras, ritmo e características da fala.',
-  cinestesico:'Na terminologia da PNL, o sistema cinestésico está relacionado à representação por sensações, movimento, contato e experiência corporal.'
-};
-document.querySelectorAll('.representation').forEach(btn=>btn.addEventListener('click',()=>{
-  document.querySelectorAll('.representation').forEach(b=>b.classList.remove('active')); btn.classList.add('active');
-  document.querySelector('#rep-description').textContent=reps[btn.dataset.rep];
-}));
-
-</script>
-</body>
+    <script src="js/script.js" type="module"></script>
+  </body>
 </html>
