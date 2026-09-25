@@ -1247,7 +1247,7 @@ footer a {
   font-size: .75rem;
 }
 
-/* ===== Nota sobre evidências científicas ===== */
+/* ===== Nota final / Evidências ===== */
 
 .evidence-note {
   border-top: 1px solid var(--line);
@@ -1259,33 +1259,71 @@ footer a {
   align-items: start;
 }
 
-.evidence-note-label {
-  padding-top: 12px;
+
+/* Botões */
+
+.evidence-tabs {
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 18px;
+
+  padding-top: 10px;
 }
 
-.evidence-note-label span {
-  display: block;
+.evidence-tab {
+  border: 0;
+  background: none;
 
-  font: 500 .8rem Consolas;
-  letter-spacing: .12em;
-
-  color: var(--violet);
-
-  margin-bottom: 10px;
-}
-
-.evidence-note-label small {
-  font: 500 .58rem Consolas;
-  letter-spacing: .1em;
+  padding: 0 0 7px;
 
   color: #6f7280;
+
+  font: 500 .7rem Consolas;
+  letter-spacing: .12em;
+
+  cursor: pointer;
+
+  border-bottom: 1px solid transparent;
+
+  transition:
+    color .25s ease,
+    border-color .25s ease,
+    transform .25s ease;
 }
 
-.evidence-note-copy {
+.evidence-tab:hover {
+  color: var(--text);
+}
+
+.evidence-tab.active {
+  color: var(--violet);
+
+  border-bottom-color: var(--violet);
+
+  transform: translateX(5px);
+}
+
+
+/* Conteúdo */
+
+.evidence-content {
   max-width: 850px;
 }
 
-.evidence-note-copy h2 {
+.evidence-panel {
+  display: none;
+}
+
+.evidence-panel.active {
+  display: block;
+
+  animation: evidenceFade .35s ease;
+}
+
+.evidence-panel h2 {
   font-size: clamp(2.5rem, 4vw, 4.2rem);
 
   line-height: 1;
@@ -1294,14 +1332,14 @@ footer a {
   margin: 18px 0 30px;
 }
 
-.evidence-note-copy h2 em {
+.evidence-panel h2 em {
   font-family: Georgia, serif;
   font-weight: 400;
 
   color: var(--violet);
 }
 
-.evidence-note-copy > p:last-child {
+.evidence-panel > p {
   color: var(--muted);
 
   font-size: 1.05rem;
@@ -1310,11 +1348,39 @@ footer a {
   max-width: 75ch;
 }
 
+.evidence-panel .eyebrow {
+  color: #c3c4ca;
+}
+
+
+/* Animação de troca */
+
+@keyframes evidenceFade {
+
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
 @media (max-width: 850px) {
 
   .evidence-note {
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 35px;
+  }
+
+  .evidence-tabs {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    gap: 20px;
   }
 
 }
