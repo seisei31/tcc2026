@@ -1247,6 +1247,78 @@ footer a {
   font-size: .75rem;
 }
 
+/* ===== Nota sobre evidências científicas ===== */
+
+.evidence-note {
+  border-top: 1px solid var(--line);
+
+  display: grid;
+  grid-template-columns: 230px 1fr;
+
+  gap: 70px;
+  align-items: start;
+}
+
+.evidence-note-label {
+  padding-top: 12px;
+}
+
+.evidence-note-label span {
+  display: block;
+
+  font: 500 .65rem Consolas;
+  letter-spacing: .12em;
+
+  color: var(--violet);
+
+  margin-bottom: 10px;
+}
+
+.evidence-note-label small {
+  font: 500 .58rem Consolas;
+  letter-spacing: .1em;
+
+  color: #6f7280;
+}
+
+.evidence-note-copy {
+  max-width: 850px;
+}
+
+.evidence-note-copy h2 {
+  font-size: clamp(2.5rem, 4vw, 4.2rem);
+
+  line-height: 1;
+  letter-spacing: -.05em;
+
+  margin: 18px 0 30px;
+}
+
+.evidence-note-copy h2 em {
+  font-family: Georgia, serif;
+  font-weight: 400;
+
+  color: var(--violet);
+}
+
+.evidence-note-copy > p:last-child {
+  color: var(--muted);
+
+  font-size: 1.05rem;
+  line-height: 1.85;
+
+  max-width: 75ch;
+}
+
+@media (max-width: 850px) {
+
+  .evidence-note {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+}
+
 @media (max-width: 750px) {
 
   .site-index {
