@@ -1266,7 +1266,7 @@ footer a {
 .evidence-note-label span {
   display: block;
 
-  font: 500 .65rem Consolas;
+  font: 500 .8rem Consolas;
   letter-spacing: .12em;
 
   color: var(--violet);
