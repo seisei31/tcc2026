@@ -64,10 +64,10 @@ const concepts = {
     'Modelagem',
     'Processo de observar e decompor estratégias e padrões usados por outra pessoa, buscando compreender como determinado desempenho é organizado.'
   ],
-  reenquadramento: [
-    'Reenquadramento',
-    'Mudança de contexto ou significado atribuído a uma experiência, com o objetivo de produzir novas interpretações e ampliar possíveis respostas.'
-  ]
+  flexibilidade: [
+  'Flexibilidade comunicativa',
+  'A adaptação da comunicação envolve observar se a mensagem foi compreendida e reformular a linguagem ou a explicação quando necessário.'
+]
 };
 
 function openModal(key) {
