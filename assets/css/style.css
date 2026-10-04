@@ -1651,4 +1651,181 @@ footer a {
   color: #777a88;
   font: 400 .65rem Consolas;
 }    
+/* =========================
+   SUMÁRIO
+========================= */
+
+#sumario {
+  scroll-margin-top: 82px;
+}
+
+.index-section {
+  width: min(calc(100% - 56px), var(--max));
+  margin: auto;
+  padding: 115px 0 135px;
+  border-top: 1px solid var(--line);
+}
+
+.index-title {
+  display: grid;
+  grid-template-columns: .55fr 1.45fr;
+  gap: 60px;
+  align-items: end;
+  margin-bottom: 65px;
+}
+
+.index-title > span {
+  font: 500 .68rem Consolas;
+  letter-spacing: .14em;
+  color: #777a88;
+  padding-bottom: 12px;
+}
+
+.index-title h2 {
+  margin: 0;
+  font-size: clamp(4.5rem, 9vw, 9rem);
+  line-height: .82;
+  letter-spacing: -.075em;
+  font-weight: 650;
+}
+
+.index-title p {
+  max-width: 560px;
+  margin: 25px 0 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* ITENS DO SUMÁRIO */
+
+.site-index {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-top: 1px solid var(--line);
+}
+
+.site-index a {
+  position: relative;
+  display: grid;
+  grid-template-columns: 55px 1fr;
+  grid-template-areas:
+    "number title"
+    "number description";
+  gap: 5px 18px;
+
+  padding: 30px 48px 30px 20px;
+
+  text-decoration: none;
+
+  border-bottom: 1px solid var(--line);
+
+  transition:
+    background .25s,
+    padding-left .25s;
+}
+
+.site-index a:nth-child(odd) {
+  border-right: 1px solid var(--line);
+}
+
+.site-index a > span {
+  grid-area: number;
+
+  font: 500 .7rem Consolas;
+  color: var(--violet);
+
+  padding-top: 5px;
+}
+
+.site-index a > strong {
+  grid-area: title;
+
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+.site-index a > small {
+  grid-area: description;
+
+  color: var(--muted);
+  font-size: .78rem;
+  line-height: 1.5;
+}
+
+.site-index a::after {
+  content: "↘";
+
+  position: absolute;
+  right: 20px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #5d6070;
+
+  transition:
+    color .25s,
+    transform .25s;
+}
+
+.site-index a:hover {
+  background: rgba(140, 124, 255, .055);
+  padding-left: 27px;
+}
+
+.site-index a:hover::after {
+  color: var(--violet);
+  transform: translateY(-50%) translate(3px, 3px);
+}
+
+.site-index a:hover strong {
+  color: white;
+}
+
+
+/* RESPONSIVIDADE DO SUMÁRIO */
+
+@media (max-width: 980px) {
+
+  .index-title {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .site-index {
+    grid-template-columns: 1fr;
+  }
+
+  .site-index a:nth-child(odd) {
+    border-right: 0;
+  }
+
+}
+
+@media (max-width: 640px) {
+
+  .index-section {
+    width: min(calc(100% - 28px), var(--max));
+    padding: 90px 0 100px;
+  }
+
+  .index-title {
+    margin-bottom: 45px;
+  }
+
+  .index-title h2 {
+    font-size: clamp(4rem, 21vw, 6rem);
+  }
+
+  .index-title p {
+    font-size: .95rem;
+  }
+
+  .site-index a {
+    padding: 24px 42px 24px 10px;
+    grid-template-columns: 42px 1fr;
+  }
+
+}
 }
