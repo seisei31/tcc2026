@@ -1754,10 +1754,29 @@ footer a {
   transform: translateY(-2px);
 }
 
+/* ===== Voltar ao sumário/Seção Mentalista ===== */
+
+.mentalist-section .back-summary {
+  color: #b9a5a0;
+  border-color: rgba(255, 102, 88, .25);
+  background: rgba(255, 102, 88, .025);
+}
+
+.mentalist-section .back-summary span {
+  color: var(--warm);
+}
+
+.mentalist-section .back-summary:hover {
+  color: var(--text);
+  border-color: rgba(255, 102, 88, .6);
+  background: rgba(255, 102, 88, .08);
+}
+
 @media (max-width: 980px) {
   .back-summary {
     margin-top: 40px;
   }
+
 }
 
 
