@@ -9,6 +9,7 @@
   --violet:#8c7cff; 
   --cyan:#65d8d0; 
   --warm:#ff6658;
+  --education:#865dd9;
   
   --max:1280px;
 }
@@ -658,7 +659,7 @@ a{
 
 .representation.active span,
 .representation.active strong {
-  color: var(--cyan);
+  color: var(--education);
 }
 
 #rep-description {
