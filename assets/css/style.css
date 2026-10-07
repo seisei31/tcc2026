@@ -260,16 +260,16 @@ a{
   content: "";
   position: absolute;
 
-  width: 360px;
-  height: 500px;
+  width: 320px;
+  height: 420px;
 
-  right: -190px;
-  top: 50%;
+  right: -150px;
+  top: 34%;
   transform: translateY(-50%);
 
-  background: url("../images/gojotcc.png") center / contain no-repeat;
+  background: url("../images/gojotcc2.png") center / contain no-repeat;
 
-  opacity: .045;
+  opacity: .03;
   filter: grayscale(100%) contrast(.9);
 
   pointer-events: none;
