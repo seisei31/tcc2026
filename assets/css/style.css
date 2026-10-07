@@ -261,15 +261,15 @@ a{
   position: absolute;
 
   width: 320px;
-  height: 420px;
+  height: 460px;
 
-  right: -150px;
-  top: 34%;
+  right: -200px;
+  top: 30%;
   transform: translateY(-50%);
 
   background: url("../images/gojotcc2.png") center / contain no-repeat;
 
-  opacity: .03;
+  opacity: .022;
   filter: grayscale(100%) contrast(.9);
 
   pointer-events: none;
