@@ -1705,4 +1705,48 @@ footer a {
     grid-template-columns: 42px 1fr;
   }
 
+  /* ===== Voltar ao sumário ===== */
+
+.back-summary {
+  width: fit-content;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin: 55px 0 0 115px;
+
+  color: var(--muted);
+  text-decoration: none;
+
+  font: 500 .68rem Consolas;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+
+  transition:
+    color .25s ease,
+    transform .25s ease;
+}
+
+.back-summary span {
+  color: var(--violet);
+  font-size: 1rem;
+
+  transition: transform .25s ease;
+}
+
+.back-summary:hover {
+  color: var(--text);
+  transform: translateX(4px);
+}
+
+.back-summary:hover span {
+  transform: translateY(-3px);
+}
+
+@media (max-width: 980px) {
+  .back-summary {
+    margin-left: 0;
+  }
+}
 }
