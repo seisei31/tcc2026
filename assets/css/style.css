@@ -411,12 +411,14 @@ a{
   right: 22%;
   top: 49%;
   background: var(--cyan);
+  box-shadow: 0 0 14px var(--cyan);
 }
 
 .signal-c {
   bottom: 25%;
   left: 41%;
   background: var(--warm);
+  box-shadow: 0 0 14px var(--warm);
 }
 
 .hero-foot {
