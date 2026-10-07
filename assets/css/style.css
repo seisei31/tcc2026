@@ -1247,164 +1247,41 @@ footer a {
   font-size: .75rem;
 }
 
-/* ===== Nota final / Evidências ===== */
+/* ===== Evidências e limites ===== */
 
 .evidence-note {
   border-top: 1px solid var(--line);
-
-  display: grid;
-  grid-template-columns: 230px 1fr;
-
-  gap: 70px;
-  align-items: start;
 }
-
-
-/* Botões */
-
-.evidence-tabs {
-  display: flex;
-  flex-direction: column;
-
-  align-items: flex-start;
-
-  gap: 18px;
-
-  padding-top: 10px;
-}
-
-.evidence-tab {
-  border: 0;
-  background: none;
-
-  padding: 0 0 7px;
-
-  color: #6f7280;
-
-  font: 500 .7rem Consolas;
-  letter-spacing: .12em;
-
-  cursor: pointer;
-
-  border-bottom: 1px solid transparent;
-
-  transition:
-    color .25s ease,
-    border-color .25s ease,
-    transform .25s ease;
-}
-
-.evidence-tab:hover {
-  color: var(--text);
-}
-
-.evidence-tab.active {
-  color: var(--violet);
-
-  border-bottom-color: var(--violet);
-
-  transform: translateX(5px);
-}
-
-
-/* Conteúdo */
 
 .evidence-content {
-  max-width: 850px;
+  max-width: 900px;
+  margin-left: 115px;
 }
 
-.evidence-panel {
-  display: none;
-}
-
-.evidence-panel.active {
-  display: block;
-
-  animation: evidenceFade .35s ease;
-}
-
-.evidence-panel h2 {
+.evidence-content h2 {
   font-size: clamp(2.5rem, 4vw, 4.2rem);
-
   line-height: 1;
   letter-spacing: -.05em;
-
   margin: 18px 0 30px;
 }
 
-.evidence-panel h2 em {
+.evidence-content h2 em {
   font-family: Georgia, serif;
   font-weight: 400;
-
   color: var(--violet);
 }
 
-.evidence-panel > p {
+.evidence-content > p {
   color: var(--muted);
-
   font-size: 1.05rem;
   line-height: 1.85;
-
   max-width: 75ch;
 }
 
-.evidence-panel .eyebrow {
-  color: #c3c4ca;
-}
-
-
-/* Animação de troca */
-
-@keyframes evidenceFade {
-
-  from {
-    opacity: 0;
-    transform: translateY(8px);
+@media (max-width: 980px) {
+  .evidence-content {
+    margin-left: 0;
   }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-}
-
-@media (max-width: 850px) {
-
-  .evidence-note {
-    grid-template-columns: 1fr;
-    gap: 35px;
-  }
-
-  .evidence-tabs {
-    flex-direction: row;
-    flex-wrap: wrap;
-
-    gap: 20px;
-  }
-
-}
-
-@media (max-width: 750px) {
-
-  .site-index {
-    grid-template-columns: 1fr;
-  }
-
-  .site-index a {
-    grid-template-columns: 40px 1fr;
-  }
-
-  .site-index small {
-    display: none;
-  }
-}
-
-.content-columns > div p,
-.education-copy p,
-.mentalist-lead,
-.case-copy p {
-  max-width: 72ch;
 }
 
 /* ===== Imagens - O Mentalista ===== */

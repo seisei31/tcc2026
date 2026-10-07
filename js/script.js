@@ -148,27 +148,5 @@ document.querySelectorAll('.representation').forEach((btn) => {
   });
 });
 
-// Nota final / Evidências e limites
 
-const evidenceTabs = document.querySelectorAll('.evidence-tab');
-const evidencePanels = document.querySelectorAll('.evidence-panel');
 
-evidenceTabs.forEach((tab) => {
-  tab.addEventListener('click', () => {
-    const target = tab.dataset.evidence;
-
-    evidenceTabs.forEach((button) => {
-      button.classList.remove('active');
-    });
-
-    evidencePanels.forEach((panel) => {
-      panel.classList.remove('active');
-    });
-
-    tab.classList.add('active');
-
-    document
-      .querySelector(`[data-evidence-panel="${target}"]`)
-      .classList.add('active');
-  });
-});
