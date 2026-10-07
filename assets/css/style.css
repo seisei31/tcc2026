@@ -269,7 +269,7 @@ a{
 
   background: url("../images/gojotcc2.png") center / contain no-repeat;
 
-  opacity: .022;
+  opacity: .017;
   filter: grayscale(100%) contrast(.9);
 
   pointer-events: none;
