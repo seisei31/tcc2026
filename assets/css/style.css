@@ -256,6 +256,26 @@ a{
   place-items: center;
 }
 
+.hero-visual::after {
+  content: "";
+  position: absolute;
+
+  width: 360px;
+  height: 500px;
+
+  right: -190px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  background: url("../images/gojotcc.png") center / contain no-repeat;
+
+  opacity: .045;
+  filter: grayscale(100%) contrast(.9);
+
+  pointer-events: none;
+  z-index: 0;
+}
+
 .visual-ring {
   position: absolute;
   border: 1px solid rgba(255, 255, 255, .13);
