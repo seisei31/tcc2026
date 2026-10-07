@@ -333,6 +333,43 @@ a{
   transform: translateY(-4px);
   border-color: var(--violet);
 }
+/* ===== Cores dos conceitos da página inicial ===== */
+
+.node-language small {
+  color: var(--violet);
+}
+
+.node-thought small {
+  color: var(--cyan);
+}
+
+.node-behavior small {
+  color: var(--warm);
+}
+
+.node-language:hover {
+  border-color: var(--violet);
+}
+
+.node-thought:hover {
+  border-color: var(--cyan);
+}
+
+.node-behavior:hover {
+  border-color: var(--warm);
+}
+
+.node-language:hover small {
+  text-shadow: 0 0 12px rgba(140, 124, 255, .55);
+}
+
+.node-thought:hover small {
+  text-shadow: 0 0 12px rgba(101, 216, 208, .55);
+}
+
+.node-behavior:hover small {
+  text-shadow: 0 0 12px rgba(255, 102, 88, .55);
+}
 
 .node-language {
   top: 13%;
@@ -928,6 +965,23 @@ footer a {
   border-radius: 22px;
   padding: 35px;
   box-shadow: 0 30px 100px rgba(0, 0, 0, .5);
+}
+
+/* ===== Cores das caixas dos conceitos ===== */
+
+.modal-card[data-concept="linguagem"] {
+  border-color: rgba(140, 124, 255, .45);
+  box-shadow: 0 30px 100px rgba(140, 124, 255, .12);
+}
+
+.modal-card[data-concept="pensamento"] {
+  border-color: rgba(110, 247, 238, 0.5);
+  box-shadow: 0 30px 100px rgba(101, 216, 208, .10);
+}
+
+.modal-card[data-concept="comportamento"] {
+  border-color: rgba(255, 102, 88, .45);
+  box-shadow: 0 30px 100px rgba(255, 102, 88, .10);
 }
 
 .modal-card h3 {
