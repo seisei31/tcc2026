@@ -263,8 +263,8 @@ a{
   width: 320px;
   height: 460px;
 
-  right: -200px;
-  top: 30%;
+  right: -300px;
+  top: 70%;
   transform: translateY(-50%);
 
   background: url("../images/gojotcc2.png") center / contain no-repeat;
