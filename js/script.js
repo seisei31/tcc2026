@@ -73,8 +73,22 @@ const concepts = {
 function openModal(key) {
   const item = concepts[key];
   if (!item) return;
+
   modalTitle.textContent = item[0];
   modalText.textContent = item[1];
+
+  const modalCard = modal.querySelector('.modal-card');
+
+  if (
+    key === 'linguagem' ||
+    key === 'pensamento' ||
+    key === 'comportamento'
+  ) {
+    modalCard.dataset.concept = key;
+  } else {
+    modalCard.removeAttribute('data-concept');
+  }
+
   modal.classList.add('open');
   modal.setAttribute('aria-hidden', 'false');
 }
